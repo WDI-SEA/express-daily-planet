@@ -1,0 +1,10 @@
+<% include ../../views/partials/header.ejs %>
+
+<h1>Article Index</h1>
+<ul>
+    <% myArticles.forEach(function(article, idx){ %>
+    <li><a href="/articles/<%= idx %>"><%= article.title %></a></li>
+    <% }); %>
+</ul>
+
+<% include ../../views/partials/footer.ejs %>
