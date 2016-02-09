@@ -42,7 +42,17 @@ app.post('/articles', function (req,res) {
 //find, by id, an article in the array, and displays the article.
 app.get('/articles/:id', function(req,res) {
 	res.render('articles/show.ejs');
-})
+});
+
+//serves about page
+app.get('/about', function(req,res) {
+	res.render('site/about.ejs');
+});
+
+//serves contact page
+app.get('/contact', function(req,res) {
+	res.render('site/contact.ejs')
+});
 
 // listen
 app.listen(3000, function() {
