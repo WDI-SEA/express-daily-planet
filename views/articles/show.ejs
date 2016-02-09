@@ -1,0 +1,29 @@
+<!-- views/articles/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="well">
+
+            <a href="/articles">Back</a>
+            <h3> <%= articles.title %> </h3>
+            <p> <%= articles.body %> </p>
+
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>

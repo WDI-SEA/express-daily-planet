@@ -1,0 +1,53 @@
+<!-- views/articles/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+    <a href="/articles">Back to Article list</a>
+        <div class="row">
+            
+            <div class="col-sm-8">
+                
+                <div class="well">
+                    <form action="index" method="POST">
+                        <h3>Let us share your stupidity:</h3>
+                            <label>Article Name:</label>
+                            <br />
+                            <input type="text" name="title"></input>
+                            <br /> 
+                            <label>Article Body:</label>
+                            <br />
+                            <input type="text" name="body" rows="5"></input>
+                            <br />
+                            <input type="submit"></input>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+            
+                <div class="jumbotron">
+                    <h3>Give us a story!</h3>
+                    <p>Chances are we won't give you credit. Or talk to you at all. <br /> Bite my shiny metal ass.</p>
+                </div>
+                
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>
