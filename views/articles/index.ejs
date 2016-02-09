@@ -1,0 +1,17 @@
+<% include ../partials/header.ejs %>
+
+<div class="container">
+<div class="text-center">
+		<h1>What We Got</h1>
+		<% articles.forEach(function(article) { %>
+			<div class="well">
+				<h2><strong><%= article.title %></h2></strong>
+				<label>Who said it:</label>
+				<h3><%= article.character %></h3>
+				<p><%= article.body %></p>
+			</div>
+		<%});%>
+</div>
+</div>
+
+<% include ../partials/footer.ejs %>
