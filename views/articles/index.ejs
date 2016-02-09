@@ -1,0 +1,12 @@
+<% include ../partials/header.ejs %>
+
+	<h1>ARTICLES</h1>
+		
+	<% articles.forEach(function(article,idx) { %> 
+		<div class="well">
+			<h1><%= article.title %></h1>
+     		<p><%= article.body %></p>
+		</div>	
+	<% }); %>
+
+<% include ../partials/footer.ejs %>
