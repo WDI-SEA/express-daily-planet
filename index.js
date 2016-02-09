@@ -34,14 +34,22 @@ app.post("/articles", function(req, res) {
 
 //Post a new article
 app.get('/articles/new', function(req, res) {
-	res.render('./articles/new');
-})
-
-app.get("/articles/:idx", function(req, res) {
-	var articleIdx = parseInt(req.params.idx);
-	res.render('./articles/show', {article: articles[articleIdx]});
+  res.render('./articles/new');
 });
 
+//Get article by id
+app.get("/articles/:idx", function(req, res) {
+  var articleIdx = parseInt(req.params.idx);
+  res.render('./articles/show', {article: articles[articleIdx]});
+});
 
+//Get static about page
+app.get("/site/about", function(req, res) {
+  res.render('./site/about');
+});
+
+app.get("/site/contact", function(req, res) {
+  res.render('./site/contact');
+});
 
 app.listen(3000);
