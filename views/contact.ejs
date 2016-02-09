@@ -1,0 +1,11 @@
+<% include ./partials/header %>
+	<h1 class='text-center'>Contact</h1>
+	<div class='email-container'>
+		<p class='text-center'>E-mail: <a href="mailto:ClarkKent@dailymail.com">Clark Kent</a></p>
+	</div>
+<% include ./partials/footer %>
+<script>$(document).ready(function(){
+	var active = about
+	$('li.active').removeClass('active');
+	$('#contact').addClass('active');
+})</script>
