@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Submit new Article</title>
+
+		<!-- Bootstrap CSS -->
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1 class="text-center">Add a new Article</h1>
+		<form action="/articles" method="POST" class='form-inline'>
+			<label>Title:</label>
+			<input type="text" name="title">
+
+			<label>Body:</label>
+			<input type="text" name="body">
+
+			<input type="submit">
+		</form>
+		<!-- jQuery -->
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
