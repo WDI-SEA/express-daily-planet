@@ -1,0 +1,16 @@
+<% include ../partials/header.ejs %>
+
+	<h1>ARTICLES</h1>
+
+	<% include ../site/about.ejs %>
+	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+		
+	
+	<% articles.forEach(function(article,idx) { %> 
+		<div class="well">
+			<h1><%= article.title %></h1>
+     		<p><%= article.body %></p>
+		</div>	
+	<% }); %>
+</div>
+<% include ../partials/footer.ejs %>
