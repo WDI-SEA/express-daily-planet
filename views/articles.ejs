@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Articles</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="//code.jquery.com/jquery.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Articles</h1>
+		<a href="/">BACK</a>
+		<a href="/articles/New">| NEW ARTICLES</a>
+			<% articles.forEach(function( article, idx){ %>
+				<div class="showArticles">
+					<h2>
+						<a href="articles/<%= idx %>">
+						<%= article.title %>
+						</a>	
+					</h2>
+					<p>  
+						<%= article.body %> 
+					</p>
+				</div>
+			<% }); %>
+	</div>
+
+</body>
+</html>
