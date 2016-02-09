@@ -1,0 +1,8 @@
+<% include ../partials/header.ejs %>
+  <div class="container">
+    <% articles.forEach(function(article, id) { %>
+      <h2><a href="/articles/<%= id %>"><%= article.title %></a></h2>
+      <h4><%= article.subtitle %></h4>
+    <% }); %>
+  </div>
+<% include ../partials/footer.ejs %>
