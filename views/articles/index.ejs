@@ -1,0 +1,20 @@
+<% include ../partials/header.ejs %>
+
+<div class='container'>
+	<h1> All articles</h1>
+  <a href="/articles/new">New Article</a>
+	<% articles.forEach(function(article, idx) { %>
+		<div class="well">
+			<h3>
+        <a href="/articles/<%= idx %>">
+        <%= article.title%>
+        </a>
+        </h3>
+			<p><%= article.body%></p>
+		</div>
+	<%});%>
+</div>
+
+
+
+<% include ../partials/footer.ejs %>
