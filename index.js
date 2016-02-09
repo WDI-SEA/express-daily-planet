@@ -30,9 +30,19 @@ app.get('/about', function(req, res){
 	res.render('site/about.ejs');
 });
 
+/* - This was my attempt as making a static page
+for the about page. I couldnt get it to work.
+app.use('/about', express.static(__site/about.ejs + '/about'));
+*/
+
 app.get('/contact', function(req, res){
-	res.render('site/contact.ejs')
+	res.render('site/contact.ejs');
 });
+
+/*- This was my attempt as making a static page
+for the contact page. I couldnt get it to work.
+app.use('/about', express.static(__site/contact.ejs + '/contact'));
+*/
 
 app.post('/articles', function(req, res){
 	articles.push(req.body);
