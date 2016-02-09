@@ -41,7 +41,7 @@ app.post('/articles', function(req, res){
 
 app.get('/articles/:idx', function(req, res) {
   var articleIdx = parseInt(req.params.idx);
-  res.render('show.ejs', {article: articles[articleIdx]});
+  res.render('articles/show.ejs', {article: articles[articleIdx]});
 });
 
 app.listen(3000);
