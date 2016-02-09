@@ -1,0 +1,25 @@
+<% include ../partials/header.ejs %>
+
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="/">Home</a></li>
+  <li role="presentation"><a href="/contact">Contact</a></li>
+  <li role="presentation"><a href="/about">About</a></li>
+  <li role="presentation" class="active"><a href="/articles">Articles</a></li>
+  <li role="presentation"><a href="/articles/new">New</a></li>
+</ul>
+<div class="container">
+    <h1>Articles</h1>
+    <a href="/articles/new">New Article</a>
+    <% articles.forEach(function(article, idx) { %>
+      <div class="well">
+        <h3>
+          <a href="/articles/<%= idx %>">
+            <%= article.title %>
+          </a>
+        </h3>
+        <p><%= article.body %></p>
+      </div>
+    <% }); %>
+  </div>
+
+<% include ../partials/footer.ejs %>
