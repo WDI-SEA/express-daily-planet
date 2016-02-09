@@ -1,0 +1,56 @@
+body {
+	background-image: url('/static/images/space_needle.jpg');
+	background-size: cover;
+	padding-top: 50px;
+}
+
+h1 {
+	color: white;
+	font-family: "Century Gothic";
+	font-size: 50px;
+	text-align: center;
+}
+
+h2 {
+	color: white;
+	font-family: "Century Gothic";
+	text-align: center;
+}
+
+h3 {
+	color: white;
+	font-family: "Century Gothic";
+	/*text-align: right;*/
+	font-weight: bold;
+	font-size: 30px;
+}
+
+p {
+	color: white;
+	font-family: "Century Gothic";
+	/*float: right;*/
+	font-size: 18px;
+}
+
+.article {
+	float: right;
+	width: 15%;
+	display: block;
+}
+
+form {
+	text-align: center;
+}
+
+ul {
+	font-family: Helvetica;
+	font-size: 20px;
+	float: right;
+}
+
+li {
+	display: inline;
+	text-decoration: none;
+	margin-right: 10px;
+}
+

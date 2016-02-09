@@ -4,6 +4,7 @@ var app = express();
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}));
+app.use('/static', express.static('public'));
 
 var articles= [
 	{title: 'WDI Students at High Risk for Anxiety Disorders', body: 'New study finds that students in this fast-paced learning environment suffer anxiety disorders at much higher rate than the rest of the population.'},
@@ -48,6 +49,7 @@ app.get("/site/about", function(req, res) {
   res.render('./site/about');
 });
 
+//Get static contact page
 app.get("/site/contact", function(req, res) {
   res.render('./site/contact');
 });
