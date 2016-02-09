@@ -1,0 +1,29 @@
+<% include ../partials/header.ejs %>
+
+
+	<form style="margin-top:250px ; margin-left:400px ; font-family:Georgia" class="row vertical-center-row" class="horizontal" action="/articles" method="POST">
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-md-6">
+				<input type="text" placeholder="title of article" name="title">
+			</div>
+		</div>
+
+		<div clss="form-group">
+			<div class="col-sm-offset-2 col-md-6">
+				<input type="text" placeholder="body of article" name="body">
+			</div>
+		</div>
+
+
+		<div clss="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<input class="btn btn-default" type="submit">
+		</div>
+		</div>
+
+	</form>
+
+
+<% include ../partials/footer.ejs %>
+
+
