@@ -4,7 +4,7 @@ var app = express();
 
 var articles = [
   {title: 'QUEEN BEY SLAYS', body: 'at superbowl 50 aka the beyonce concert'},
-  {title: 'RELEASE GUCCI', body: 'the world needs that BURRRR'},
+  {title: 'RELEASE GUCCI', body: 'BURRRR'},
   {title: 'CLOTH TALK FT. DJ KHALED', body: 'all we do is win, win, win'},
   {title: 'DAYMAN', body: 'the fighter of the night man'}
 ];
