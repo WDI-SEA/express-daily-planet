@@ -1,0 +1,21 @@
+.container .theDailyPlanet{
+	text-align: center;
+	text-decoration: underline;
+}
+
+.container{
+	text-align: center;
+}
+
+.links {
+	text-align: center;
+	margin: 0 auto;
+}
+.frontPageImage{
+	margin: 0 auto;
+	width: 500px;
+}
+.dailyPlanet{
+	width: 500px;
+
+}

@@ -1,0 +1,19 @@
+<% include ../partials/header.ejs %>
+	<div class="container">
+		<h1>Articles</h1>
+		<a href="/">BACK</a>
+		<a href="/articles/New">| NEW ARTICLES</a>
+			<% articles.forEach(function( article, idx){ %>
+				<div class="showArticles">
+					<h2>
+						<a href="articles/<%= idx %>">
+						<%= article.title %>
+						</a>	
+					</h2>
+					<p>  
+						<%= article.body %> 
+					</p>
+				</div>
+			<% }); %>
+	</div>
+<% include ../partials/footer.ejs %>

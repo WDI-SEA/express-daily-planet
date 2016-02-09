@@ -1,0 +1,13 @@
+<% include ../partials/header.ejs %>
+	<div class="container">
+		<h1>Articles</h1>
+		<a href="/articles">BACK</a>
+		<form action="/articles" method="POST">
+			<label>Article Name</label>
+			<input type="text" name="title"></input> 
+			<label>Article Body</label>
+			<input type="text" name="body"></input>
+			<input type="submit"></input>
+		</form>
+	</div>
+<% include ../partials/footer.ejs %>
