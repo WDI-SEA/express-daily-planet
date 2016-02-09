@@ -1,0 +1,13 @@
+<% include ../partials/header.ejs %>
+
+<h1>Have a story we don't know about? Keep us in the loop!</h1>
+
+<form action='/articles' method="POST">
+	<label>Title</label>
+	<input type='text' name='title'>
+	<label>Story</label>
+	<input type='text' name='body'>
+	<input type='submit'>
+</form>
+
+<% include ../partials/footer.ejs %>

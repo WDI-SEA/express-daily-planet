@@ -1,0 +1,16 @@
+<% include ../partials/header.ejs %>
+
+<h1>Read all of our latest articles here!</h1>
+
+<ul>
+	<% articles.forEach(function(article) {  %>
+	<li>
+		<div>
+			<h3><%= article.title %></h3>
+			<p><%= article.body %></p>
+		</div>
+	</li>
+	<%	})                                 %>
+</ul>
+
+<% include ../partials/footer.ejs %>
