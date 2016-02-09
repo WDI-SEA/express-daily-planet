@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Show Articles</title>
-	<!-- Latest compiled and minified CSS & JS -->
-	<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<script src="//code.jquery.com/jquery.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-</head>
-<body>
+<% include ../partials/header.ejs %>
 	<div class="Container">
 		<a href="/articles">Back</a>
 		<h3> <%= articles.title %> </h3>
 		<p> <%= articles.body %> </p>
 	</div>
-</body>
-</html>
+<% include ../partials/footer.ejs %>

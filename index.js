@@ -42,8 +42,15 @@ app.get("/contact", function(req, res){
 
 app.get("/articles/:idx", function(req, res){
 	var articlesIdx = parseInt(req.params.idx);
-	res.render("articlesShow.ejs" , {articles: articles[articlesIdx]});
-})
+	if(articlesIdx >= 0 && articlesIdx < articles.length ){
+		res.render("articlesShow.ejs",{
+			articles: articles[articlesIdx]
+		});
+	}else {
+		res.send("Error!");
+	};
+	// res.render("articlesShow.ejs" , {articles: articles[articlesIdx]});
+});
 
 
 
