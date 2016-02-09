@@ -1,0 +1,15 @@
+<% include ../partials/header.ejs %>
+  <div class="container">
+    <h1>New Article</h1>
+    <form action="/articles" method="POST">
+
+      <label>Article title:</label>
+      <input type="text" name="title">
+
+      <label>Article body:</label>
+      <textarea name="body"></textarea>
+
+      <input type="submit">
+    </form>
+  </div>
+<% include ../partials/footer.ejs %>
