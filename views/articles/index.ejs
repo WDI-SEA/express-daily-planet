@@ -1,0 +1,14 @@
+<% include ../partials/header.ejs %>
+
+<% articles.forEach(function(article, idx) { %>
+  <h3>
+    <a href="/articles/<%= idx %>">
+      <%= article.title %>
+    </a>
+  </h3>
+  <p>
+    <%= article.body %>
+  </p>
+<% }); %>
+
+<% include ../partials/footer.ejs %>
