@@ -1,5 +1,12 @@
 <% include ../partials/header.ejs %>
 
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="/">Home</a></li>
+  <li role="presentation"><a href="/contact">Contact</a></li>
+  <li role="presentation"><a href="/about">About</a></li>
+  <li role="presentation"><a href="/articles">Articles</a></li>
+  <li role="presentation" class="active"><a href="/articles/new">New</a></li>
+</ul>
 <div class="container">
     <h1>New Article</h1>
     <form action="/articles" method="POST">
