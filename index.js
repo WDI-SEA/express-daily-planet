@@ -4,10 +4,11 @@ var app = express();
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static('public'));
 
 var articles = [
 	{title: 'Article Title', body: 'This is where the body of the article goes.'},
-	{title: 'Rabid Clows on the Loose', body: 'Police are urging the public to stay indoors tonight...'}
+	{title: 'Rabid Clowns on the Loose', body: 'Police are urging the public to stay indoors tonight...'}
 ];
 // home page
 app.get("/", function(req,res) {
@@ -15,7 +16,7 @@ app.get("/", function(req,res) {
 });
 // list of all articles
 app.get("/articles", function(req,res) {
-  res.render('articles/index.ejs', {articles: articles});
+  res.render('articles/articleIndex.ejs', {articles: articles});
 });
 // submit form for new stories
 app.get("/articles/new", function(req,res) {
