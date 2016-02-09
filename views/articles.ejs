@@ -1,25 +1,22 @@
 <% include ./partials/header %>
-	<title>Articles</title>
-	<!-- Latest compiled and minified CSS & JS -->
-	<link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-<body>
-	<h1 class='text-center'>Article List</h1>
-	<div class='container'>
-		<% articles.forEach(function(article, idx){ %>
-			<div class='well'>
-				<a href="/articles/<%= idx %>"><h2><%= article.title %></h2></a>
-				<p><%= article.body %></p>
-			</div>
-		<% }) %>
-		<a href='/articles/new'><p class='text-center'>Add New Article</p></a>
-	</div>
-		<script>$(document).ready(function(){
-			var active = articles;
-			$('li.active').removeClass('active');
-			$('#articles').addClass('active');
-		})</script>
-</body>
-</html>
+<title>Articles</title>
+<!-- Latest compiled and minified CSS & JS -->
+<link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<h1 class='text-center'>Article List</h1>
+<div class='container'>
+	<% articles.forEach(function(article, idx){ %>
+		<div class='well'>
+			<a href="/articles/<%= idx %>"><h2><%= article.title %></h2></a>
+			<p><%= article.body %></p>
+		</div>
+	<% }) %>
+	<a href='/articles/new'><p class='text-center'>Add New Article</p></a>
+</div>
+<script>$(document).ready(function(){
+	var active = articles;
+	$('li.active').removeClass('active');
+	$('#articles').addClass('active');
+})</script>
