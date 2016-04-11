@@ -1,0 +1,5 @@
+<ul>
+  <% myArticles.forEach(function(article, index){ %>
+  <li><a href="/articles/<%= index %>"><%= article.title %></a></li>
+  <% }); %>
+</ul>
