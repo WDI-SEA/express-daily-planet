@@ -16,37 +16,50 @@ app.use(express.static(__dirname + '/views'));
 
 //homepage
 app.get("/",function(req,res){
+  // console.log("1");
   res.render('index.ejs');
   console.log('All is well on index');
 });
 
 //lists articles
 app.get("/articles", function(req, res) {
+  // console.log("2");
   res.render('articles/index', {myArticles: articles});
     console.log('All is well on articles index');
 });
 
 //form for a new article
 app.get("/articles/new", function(req, res) {
+  // console.log("3");
   res.render('articles/new.ejs');
   console.log('All is well on the tip page');
   // res.redirect('articles');
 });
 
 //adds to articles array
-app.post("/articles/new", function(req, res) {
+app.post("/articles", function(req, res) {
+  // console.log("4");
   articles.push(req.body);
   console.log('All is well on adding an article');
-  res.redirect('articles')
+  res.redirect('/articles');
 });
 
 app.get("/articles/:id", function(req, res) {
+  // console.log("5");
   var articleId = parseInt(req.params.id);
-
+  console.log("get article", articles[articleId]);
   res.render('articles/show', {myArticles: articles[articleId]});
-  });
+});
 
+app.get("/sites/about", function(req, res) {
+  res.render('sites/about.ejs');
+  console.log('All is well on the about page');
+});
 
+app.get("/sites/contact", function(req, res) {
+  res.render('sites/contact.ejs');
+  console.log('All is well on the contact page');
+});
 
 
 
