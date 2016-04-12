@@ -1,0 +1,28 @@
+body {
+	background-color: lightgray;
+}
+#footer {
+   position:absolute;
+   padding-top: 20px;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background: gray;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style-type: none;
+}
+li {
+	margin: 20px 0px;
+}
+.centered-list {
+	text-align: center;
+}
+.centered-list li {
+	display: inline;
+	margin: 0 auto;
+	margin: 10px 20px;
+}
