@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var path = require('path')
+var path = require('path');
+var url = require('url');
 
 
 var articles = [
@@ -24,8 +25,27 @@ app.get("/",function(req,res){
 });
 
 //lists articles
+//searches articles
 app.get("/articles", function(req, res) {
-  res.render('articles/index', {myArticles: articles});
+  var url_parts = url.parse(req.url, true);
+  var query = url_parts.query;
+  var searchTerm = query.q;
+  console.log(query.q);
+
+  if(!searchTerm) {
+      res.render("articles", {articles: articles});
+    } else {
+    var results = [];
+    articles.forEach(function(article) {
+      var artTitle = article.title.indexOf(searchTerm) != -1;
+      var artBody = article.body.indexOf(searchTerm) != -1;
+      var artBy = article.byline.indexOf(searchTerm) != -1;
+      if(artTitle || artBody || artBy) {
+        results.push(article);
+      }
+    });
+    res.render("articles", {articles: results});
+  } 
 });
 
 //lists articles
