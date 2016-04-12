@@ -1,0 +1,11 @@
+<%  include ./partials/header.ejs %>
+
+	<h1>The Daily Planet</h1>
+	<ul>
+		<% things.forEach(function(value) {; %>
+		<li><%= value %></li>
+		<% }); %>
+	</ul>
+
+<% include ./partials/footer.ejs %>
+
