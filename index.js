@@ -38,8 +38,8 @@ app.get("/about", function (req, res){
 	res.render('About');
 });
 
-app.get("/index", function (req, res){
-	res.render('index');
+app.get("/contact", function (req, res){
+	res.render('contact');
 });
 
 
