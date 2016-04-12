@@ -1,7 +1,10 @@
 var express = require('express');
-// var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var app = express();
 
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/views'));
+app.use(bodyParser.urlencoded({extended: false}) );
 
 var articles = [
 	{title: 'Superman \'s Secret Identiy Revealed!', body: 'Superman, the lone survivor of the doomed planet Krypton and earth\'s most recognizable superhero, led a double life'},
@@ -15,7 +18,30 @@ app.get("/",function(req,res){
 
 app.get("/articles", function (req, res){
 	res.render('Articles/index.ejs', {myArticles: articles});
-})
+});
+
+app.get("/articles/new", function (req, res){
+	res.render('Articles/new');
+});
+
+app.post('/articles', function (req, res){
+	articles.push(req.body);
+	res.redirect('/articles');
+});
+
+app.get("/articles/:index", function(req, res){
+	var articleIndex = parseInt(req.params.index); 
+	res.render('articles/show', {myArticle: articles[articleIndex]}); 
+});
+
+app.get("/about", function (req, res){
+	res.render('About');
+});
+
+app.get("/index", function (req, res){
+	res.render('index');
+});
+
 
 
 app.listen(3000);
