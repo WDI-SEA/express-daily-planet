@@ -3,15 +3,11 @@
  
  <h2>Latest Articles </h2>
  
- <ul>
-   <% myArticles.forEach(function(article, index) {  %>
-   <li>
-     <div>
-       <h3><%= article.title %></h3>
-       <p><%= article.body %></p>
-     </div>
-   </li>
-   <%  })  %>
- </ul>
+  <% myArticles.forEach(function(article, index) {  %>
+    <div class= "container col-sm-6">
+      <h3 class="breadcrumb"><%= article.title %></h3>
+      <p><%= article.body %></p>
+   </div>
+ <%  })  %>
 
 <% include ../partials/footer.ejs %>

@@ -9,8 +9,8 @@ app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({extended: false}) );
 
 var articles = [
-  {title: 'Article Title', body: 'the first article'},
-  {title: 'Article 2', body: 'the second article'},
+  {title: 'Hipsum', body: 'Schlitz tousled drinking vinegar, asymmetrical chambray ethical waistcoat aute semiotics. Duis synth venmo accusamus, YOLO mollit meditation lumbersexual aesthetic. Fingerstache cronut blog intelligentsia echo park synth, mumblecore officia drinking vinegar XOXO hammock cliche. Distillery et accusamus vegan shabby chic delectus fugiat. Readymade heirloom pitchfork bitters jean shorts. Occaecat fashion axe slow-carb, scenester sustainable selfies shoreditch fap tacos pinterest single-origin coffee. Irure ut culpa put a bird on it.'},
+  {title: 'Ipsum', body: 'VHS veniam narwhal, ex laboris squid direct trade sustainable gochujang. Cardigan organic ullamco magna, est chicharrones ad ramps you probably havent heard of them. Listicle ramps freegan eiusmod keffiyeh everyday carry plaid. Do chillwave seitan tousled church-key celiac. Cred salvia actually, kale chips distillery franzen chia leggings next level ullamco blue bottle esse. Cardigan viral try-hard dolore fashion axe. Franzen fixie portland, freegan nesciunt synth sapiente YOLO listicle semiotics taxidermy narwhal vegan.'},
 ];
 
 
