@@ -1,0 +1,15 @@
+<% include ./partials/header.ejs %>
+
+<h1>Welcome to the Daily Planet</h1>
+
+<a href="/site/about.html">About</a>
+<a href="/site/contact.html">Contact</a>
+
+<% articles.forEach(function(article, index) { %>
+<h3><a href="/articles/<%= index %>"><%= article.title %></a></h>
+<p><%= article.body %></p>
+<% }); %>
+
+<a href="/articles/new">Submit your own article</a>
+
+<% include ./partials/footer.ejs %>
