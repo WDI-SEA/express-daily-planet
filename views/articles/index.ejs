@@ -6,7 +6,7 @@
   <h1> The latest from The Daily Planet </h1>
   <ul>
     <% myArticles.forEach(function(article, index){ %>
-      <li> <%= article.title %> by <%= article.byline %> </li>
+      <li><a class="no-spacing" href="/articles/<%= index %>"><%= article.title %> by <%= article.byline %> </a></li>
      <% }); %>
   </ul>
   

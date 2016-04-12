@@ -9,6 +9,9 @@ p, ul, li {
   font-size: 15px;
 }
 
+a {
+  color: gray;
+}
 
 
 .footer {
@@ -23,13 +26,15 @@ p, ul, li {
   color: black;
 }
 
-a, .navbar-links {
+.navbar-links {
   font-family: serif;
   color: gray;
   font-size: 18px;
   text-align: center;
   word-spacing: 30px;
 }
+
+
 
 h1 {
   font-family: serif;
