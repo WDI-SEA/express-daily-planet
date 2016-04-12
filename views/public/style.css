@@ -1,114 +1,108 @@
 body {
-  background-color: white;
-  margin-top: -20px
+    background-color: #fff;
+    margin-top: -20px;
 }
 
 h1 {
-  text-align: center;
-  font-family: 'Coda', monospace;
+    text-align: center;
+    font-family: 'Coda',monospace;
 }
 
-p{
-
-  text-align: center;
-  font-family: 'Coda', monospace;
+p {
+    text-align: center;
+    font-family: 'Coda',monospace;
 }
 
 img {
-  position: absolute;
-  width: 95%;
-  margin-left: 20px;
-  margin-top: -210px;
+    position: absolute;
+    width: 95%;
+    margin-left: 20px;
+    margin-top: -210px;
 }
 
 .navbar {
-  margin-top: 215px;
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 0px;
-  border: none;
-  background-color: transparent;
-  color: black;
-  font-family: 'Coda', monospace;
+    margin-top: 215px;
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0;
+    border: none;
+    background-color: transparent;
+    color: #000;
+    font-family: 'Coda',monospace;
 }
 
 body > nav {
-  padding-left: 15px;
-  padding-right: 50px;
+    padding-left: 15px;
+    padding-right: 50px;
 }
 
 body > div.modal.fade.bd-example-modal-lg.in > div > div.modal-content {
-  background-color: transparent;
-  color: white
+    background-color: transparent;
+    color: #fff;
 }
 
 body > div.modal.fade.bd-example-modal-lg.in > div {
-  background: black;
-  width: 500px;
-  height: 350px;
-  color: white;
+    background: #000;
+    width: 500px;
+    height: 350px;
+    color: #fff;
 }
 
-
 #bs-example-navbar-collapse-1 > ul > li:nth-child(4) > button {
-  color: inherit;
-  background-color: inherit;
-  position: inherit;
-  padding-top: 15px;
-  border: none;
-  color: #777;
+    color: inherit;
+    background-color: inherit;
+    position: inherit;
+    padding-top: 15px;
+    border: none;
+    color: #777;
 }
 
 body > div.modal.fade.bd-example-modal-lg.in > div > div.modal-footer > button.btn.btn-primary {
-  color: #fff;
-  background-color: transparent;
-  border-color: transparent;
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 body > div.modal.fade.bd-example-modal-lg.in > div > div.modal-footer > button.btn.btn-secondary {
-  border-color: none;
-  background-color: transparent;
-
+    border-color: none;
+    background-color: transparent;
 }
 
 #exampleModalLabel {
-  text-align: center;
-  font-size: 20px;
-  margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
 }
 
 body > div.jumbotron {
-  margin-top: 20px;
-  padding-left: 60px;
-  padding-right: 80px;
-  background: url(super.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: 15px solid black;
-  height: 300px;
-  border-collapse: collapse;
-  font-family: 'Coda', monospace;
-  border-left: none;
-  border-right: none;
-  height: 350px;
-  border-bottom: none;
+    margin-top: 20px;
+    padding-left: 60px;
+    padding-right: 80px;
+    background: url(super.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 15px solid #000;
+    height: 300px;
+    border-collapse: collapse;
+    font-family: 'Coda',monospace;
+    border-left: none;
+    border-right: none;
+    height: 350px;
+    border-bottom: none;
 }
 
 body > div.jumbotron > p:nth-child(3) > a {
-  color: white;
-  background-color: black;
+    color: #fff;
+    background-color: #000;
 }
 
 body > div.jumbotron > h1 {
-font-size: 85px;
-color: black;
-margin-top: 325px;
+    font-size: 85px;
+    color: #000;
+    margin-top: 325px;
 }
 
 body > div.jumbotron > p {
-font-size: 30px;
-color: black;
+    font-size: 30px;
+    color: #000;
 }
-
-
-

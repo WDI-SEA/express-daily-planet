@@ -45,10 +45,4 @@ app.get('/articles/:index', function(req, res) {
 });
 
 
-
-
-
-
-
-
 app.listen(3000);
