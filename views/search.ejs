@@ -1,0 +1,9 @@
+<% include ./partials/header.ejs %>
+
+
+
+
+  <% myResults.forEach(function(article, index){ %>
+    <h2><a href="/articles/<%= index %>"><%= article.title %></a></h2>
+    <p> <%= article.body %> </p>
+  <% }) %>
