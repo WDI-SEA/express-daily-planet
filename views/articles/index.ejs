@@ -2,7 +2,7 @@
 
 <ul>
   <% myArticles.forEach(function(article, index){ %>
-  <li><a href="/articles/<%= index %>"><%= article.title %></a></li>
+  <li><a href="/articles/<%= index %>"><%= article.title %></a><form method="delete"><input type="submit" name="delete" value="Delete"></form></li>
   <% }); %>
 </ul>
 

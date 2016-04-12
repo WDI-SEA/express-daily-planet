@@ -47,6 +47,11 @@ app.get('/articles/:index', function(req, res){
   res.render('articles/show', {myArticle: articles[articleIndex]});
 });
 
+app.delete('/articles/:index', function(req, res){
+  var articleIndex = parseInt(req.params.index);
+  res.send('Deleted')
+  res.redirect('/articles');
+});
 
 
 app.listen(3000);
