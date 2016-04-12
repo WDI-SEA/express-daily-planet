@@ -12,7 +12,7 @@ var articles = [
 //////////
 // Middleware
 //////////
-app.use('/site', express.static(__dirname + '/views/site'));
+app.use(express.static(__dirname + '/views'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -44,6 +44,15 @@ app.post('/articles/new', function(req, res) {
 app.get('/articles/:i', function(req, res) {
   res.render('articles/single-article.ejs', {articles: articles, i: parseInt(req.params.i)});
 });
+
+app.get('/site/about', function(req, res) {
+  res.render('site/about.ejs');
+});
+
+app.get('/site/contact', function(req, res) {
+  res.render('site/contact.ejs');
+});
+
 
 
 
