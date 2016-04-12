@@ -6,7 +6,17 @@ body{
 
 
 }
-#li{
-	left-margin:200px;
+#container{
+/*	display: inline-block;*/
+	width: 700px;
+}
+
+#text{
+	width:500px;
+}
+
+#form{
+	height:500px;
+	width: 500px;
 }
 

@@ -19,6 +19,29 @@ app.get("/",function(req,res){
 app.get("/articles", function (req, res){
 	res.render('Articles/index.ejs', {myArticles: articles});
 });
+ 
+
+
+app.get("articles", function(req, res){
+	var url_parts = url.parse(req.url, true);
+	var query = url_parts.query;
+	var searchTerm = 	query.q;
+
+
+		if(!searchTerm){
+		res.render("articles", {articles: articles});
+		} else{
+			var results = [];
+			articles.forEach(function(article) {
+				var isTitleMatch= article.title.indexOf(searchTerm) !=-1;
+				var isContentMatch = article.content.indexOf(searchTerm) != -1;
+				if (isTitleMatch || isContentMatch) {
+				results.push(article);
+			}
+		});
+			res.render("articles", {articles: results});
+		}
+	});
 
 app.get("/articles/new", function (req, res){
 	res.render('Articles/new');
