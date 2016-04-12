@@ -1,0 +1,10 @@
+<% include ./partials/header.ejs %>
+
+<% articles.forEach(function(article) { %>
+	<li><%= article.title %></li>
+	<li><%= article.body %></li>
+
+<% }); %>
+
+
+<% include ./partials/footer.ejs %>
