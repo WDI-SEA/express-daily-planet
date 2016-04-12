@@ -2,8 +2,11 @@
 
 <ul>
   <% myArticles.forEach(function(article, index){ %>
-  <li><a href="/articles/<%= index %>"><%= article.title %></a><form method="delete"><input type="submit" name="delete" value="Delete"></form></li>
+  <li><a href="/articles/<%= index %>"><%= article.title %></a></li>
   <% }); %>
 </ul>
 
 <% include ../partials/footer.ejs %>
+
+<!-- I was trying to put this between my li tags above: -->
+<!-- <a href="/articles/<%= index %>" class="delete-link">Delete</a> -->
