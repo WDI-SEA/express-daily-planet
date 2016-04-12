@@ -4,6 +4,7 @@ var app = express();
 
 app.use(express.static(__dirname + '/views'));
 app.set('view engine', 'ejs');
+app.use( bodyParser.urlencoded({extended: false}) );
 
 var articles = [
   {title: 'Article title', body: 'this is the first article body'},
@@ -36,8 +37,8 @@ app.get('/articles/:index', function(req, res) {
   res.render('articles/show', {myArticle: articles[articleIndex]});
 });
 
-app.post('/articles', function(req, res) {
-  articles.push({title: req.title, body: req.body});
+app.post('/articles/new', function(req, res) {
+  articles.push({title: req.body['title'], body: req.body['body']});
 
   res.redirect('/articles');
 });
