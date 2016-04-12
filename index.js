@@ -3,12 +3,8 @@ var bodyParser = require('body-parser')
 var app = express();
 
 var articles = [
-  {title: 'Article title', body: 'this is the first article body'}, 
-  {title: 'Article title', body: 'this is the second article body'}, 
-  {title: 'Article title', body: 'this is the third article body'}, 
-  {title: 'Article title', body: 'this is the fourth article body'}, 
-  {title: 'Article title', body: 'this is the fifth article body'}, 
-  {title: 'Article title', body: 'this is the sixth article body'}
+  {title: 'SUPERMAN RETURNS!', body: "It's a bird! It's a plane! It's... Superman's highest profile gig in a long time? Starting next month, the Man of Steel will take up residence at USA Today, appearing in a beautiful new weekly strip."}, 
+  {title: "SUPERMAN'S IDENTITY REVEALED", body: 'Man of Steel dwelt amoung us as Daily Planet Reporter Clark Kent'}, 
 ];
 
 
@@ -23,14 +19,23 @@ app.get('/',function(req,res){
   res.render('index');
 });
 
+app.get('/site/about', function(req, res) {
+  res.render('site/about');
+});
+
 app.post('/articles', function(req, res) {
   articles.push(req.body);
 
   res.redirect('/articles');
 });
 
+
 app.get('/articles', function(req, res) {
   res.render('articles/index', {eachArticle: articles});
+});
+
+app.get('/articles/new', function(req, res) {
+  res.render('articles/new');
 });
 
 app.get('/articles/:index', function(req, res) {
@@ -39,9 +44,9 @@ app.get('/articles/:index', function(req, res) {
   res.render('articles/show', {myArticle: articles[articleIndex]});
 });
 
-app.get('/site/about'), function(req, res) {
-  res.render('/site/about');
-});
+
+
+
 
 
 
