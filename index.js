@@ -1,6 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+var path = require('path')
+
 
 var articles = [
 {title: 'Lex Luthor strikes again!', byline: "Lois Lane", body: 'Why is he after us?'},
@@ -13,54 +15,44 @@ var articles = [
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(__dirname + '/views'));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 //homepage
 app.get("/",function(req,res){
-  // console.log("1");
   res.render('index.ejs');
-  console.log('All is well on index');
 });
 
 //lists articles
 app.get("/articles", function(req, res) {
-  // console.log("2");
   res.render('articles/index', {myArticles: articles});
-    console.log('All is well on articles index');
 });
 
 //form for a new article
 app.get("/articles/new", function(req, res) {
-  // console.log("3");
-  res.render('articles/new.ejs');
-  console.log('All is well on the tip page');
-  // res.redirect('articles');
+  res.render('articles/new');
 });
 
 //adds to articles array
 app.post("/articles", function(req, res) {
-  // console.log("4");
   articles.push(req.body);
-  console.log('All is well on adding an article');
   res.redirect('/articles');
 });
 
 app.get("/articles/:id", function(req, res) {
-  // console.log("5");
   var articleId = parseInt(req.params.id);
-  console.log("get article", articles[articleId]);
   res.render('articles/show', {myArticles: articles[articleId]});
 });
 
-app.get("/sites/about", function(req, res) {
-  res.render('sites/about.ejs');
+app.get("/about", function(req, res) {
+  res.render('./site/about.ejs');
   console.log('All is well on the about page');
 });
 
-app.get("/sites/contact", function(req, res) {
-  res.render('sites/contact.ejs');
+app.get("/contact", function(req, res) {
+  res.render('./site/contact');
   console.log('All is well on the contact page');
 });
-
 
 
 app.listen(3000);
