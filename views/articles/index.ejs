@@ -1,5 +1,11 @@
 
-  <% articles.forEach(function(article, id) { %>
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="/articles">Articles</a></li>
+  <li role="presentation"><a href="/contact">Contact</a></li>
+  <li role="presentation"><a href="/aboutme">About</a></li>
+</ul>
+  <% myArticles.forEach(function(article, id) { %>
     <h2> <%= article.title%> </h2>
     <p> <%=article.body%> </p>
   <%})%>
