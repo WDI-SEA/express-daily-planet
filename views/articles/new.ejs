@@ -1,13 +1,18 @@
 <% include ../partials/header.ejs %>
 
+<div class="col-md-offset-2 col-md-8 col-md-offset-2">
 
-<h1> What's the tip, ace?</h1>
+  <h1> What's the tip, ace?</h1>
 
-<form method="post" action="/articles"> 
-  <input type="text" name="title" placeholder="title">
-  <input type="text" name="byline" placeholder="your name">
-  <input type="text" name="body" placeholder="the good stuff">
-  <input type="submit">
-</form>
+  <form method="post" action="/articles"> 
+    <input type="text" name="title" placeholder="title">
+    <input type="text" name="byline" placeholder="your name">
+    <br>
+    <input  class="submissionField" type="text" name="body" >
+    <br>
+    <input type="submit">
+  </form>
+
+</div>
 
 <% include ../partials/footer.ejs %>

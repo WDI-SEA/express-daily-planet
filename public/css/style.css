@@ -39,3 +39,14 @@ h1 {
   font-size: 30px;
   padding-bottom: 20px;
 }
+
+.submissionField{
+  width: 50%; 
+  height: 390px; 
+  border: 1px solid #999999; 
+  padding: 5px; 
+}
+
+.spacer {
+  padding-bottom: 30px;
+}
