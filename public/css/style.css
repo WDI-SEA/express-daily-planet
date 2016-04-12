@@ -1,48 +1,41 @@
-h1 {
-  color: black;
+h3 {
+  color: gray;
+  font-family:serif;
+  text-align: center;
 }
 
 p {
-
+  font-family: serif;
+  font-size: 15px;
 }
 
 ul {
-  
+  font-family: serif;
 }
 
-.navbar-simple .brand {
-  padding-top: 15px;
-  padding-bottom: 15px;
+.footer {
+  text-align: center;
+  padding-top: 30px;
 }
-.navbar-simple .navbar-inner {
-  background: #fff;
-  filter: none !important;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0 2px 15px rgba(0,0,0,0.25);
-  -webkit-box-shadow: 0 2px 15px rgba(0,0,0,0.25);
-  border-bottom: 1px solid rgba(0,0,0,0.2);
+
+.header-big, .brand {
+  font-family:'Almendra SC', serif;
+  font-size: 52px;
+  text-align: center;
+  color: black;
 }
-.navbar-simple .navbar-inner .nav {
-  float: right;
+
+a, .navbar-links {
+  font-family: serif;
+  color: gray;
+  font-size: 18px;
+  text-align: center;
+  word-spacing: 30px;
 }
-.navbar-simple .navbar-inner .nav li a {
-  background: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: #777;
-  font-size: 13px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-weight: 600;
-}
-.navbar-simple .navbar-inner .nav li a:hover {
-  background: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: #bf3604;
-}   
-.navbar-simple .navbar-inner .nav li.active a {
-  color: #bf3604;
+
+h1 {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 20px;
 }
