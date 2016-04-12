@@ -1,0 +1,27 @@
+body{
+	background-image: url("https://farm1.staticflickr.com/1/185679814_0973186141_o_d.jpg");
+	background-repeat: no-repeat;
+	background-size: 1350px;
+	font-family: 'Bangers', cursive;
+
+}
+.nav{
+	margin-top: 30px;
+	font-family: 
+	font-size: 25px;
+/*	height:40px
+	width: 100px;*/
+}
+/*#tab{
+	height:30px;
+	width:50px;
+}*/
+
+h1{
+	color: white;
+	padding-top: 100px;
+}
+
+h3{
+	color:white;
+}
