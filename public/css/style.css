@@ -4,14 +4,12 @@ h3 {
   text-align: center;
 }
 
-p {
+p, ul, li {
   font-family: serif;
   font-size: 15px;
 }
 
-ul {
-  font-family: serif;
-}
+
 
 .footer {
   text-align: center;
