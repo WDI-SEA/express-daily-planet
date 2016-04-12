@@ -1,0 +1,24 @@
+{
+  "name": "express-daily-planet",
+  "version": "1.0.0",
+  "description": "Making Headlines - Intro to Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshgranadosin/express-daily-planet.git"
+  },
+  "author": "Joshua Granadosin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshgranadosin/express-daily-planet/issues"
+  },
+  "homepage": "https://github.com/joshgranadosin/express-daily-planet#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
+  }
+}
