@@ -1,0 +1,16 @@
+
+
+
+<img src="DP.png">
+
+<ul> 
+<% eachArticle.forEach(function(article, index) { %>
+  <li><a href="/articles/<%= index %>"><%= article.title %></a></li>
+<% }); %>
+</ul>
+
+<form method="post" action="/articles">
+  <input type="text" name="title">
+  <input type="text" name="body">
+  <input type="submit">
+</form>

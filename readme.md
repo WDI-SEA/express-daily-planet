@@ -78,7 +78,7 @@ You'll need to create the following `article` routes:
     * purpose: find an article by id in the array of `articles` and display it.
 
 ## Static Pages
-Create the following `site` related routes:
+Create need the following `site` related routes:
 
 * `get` `/about` serve a static about daily planet page.
 * `get` `/contact` serve a static `contact` page.
@@ -106,5 +106,5 @@ We're getting to the big leagues now, so we'll let you figure that out on your o
     * find how to access the query string from the request (Hint: the query isn't in `req.params`)
     * displays list of articles filtered by search term
     * ensure the route still works without a query string (displays all articles)
-* There's no magic back-end solution to filtering! Use what you know about setting up routes, figure out how to access the query string and use regular JavaScript logic and array manipulation to build up an array of results.
+
 
