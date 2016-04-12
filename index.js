@@ -9,12 +9,25 @@ var articles = [
 ];
 
 app.set('view engine', 'ejs')
+
 app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', function(req, res){
   res.render('index.ejs');
 });
+
+app.get('/about',function(req, res){
+  res.render('site/about.ejs')
+});
+
+app.get('/contact',function(req,res){
+  res.render('site/contact.ejs')
+});
+
+
+
+
 
 app.get('/articles',function(req, res){
   res.render('articles/index.ejs', {myArticles: articles});

@@ -1,5 +1,11 @@
-<form method="post" action="/articles">
+<% include ../partials/header.ejs %>
+
+
+<form id="new-articles-form" method="post" action="/articles">
 <input type="text" name="title" placeholder="title">
-<input type="text" name="body" placeholder="body">
+
+  <textarea class="form-control" name="body" rows="3" placeholder="Write your content here"></textarea>
 <input type="submit">
-</form>
+
+
+<% include ../partials/footer.ejs %>
