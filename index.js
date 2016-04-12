@@ -3,6 +3,7 @@
 ///////////
 var express = require('express');
 var bodyParser = require('body-parser');
+var url = require('url');
 var app = express();
 
 var articles = [
@@ -24,8 +25,15 @@ app.get('/', function(req, res) {
   res.render('index.ejs', {articles: articles});
 });
 
-app.get('/articles', function(req, res) {
-  res.render('articles/index.ejs', {articles: articles});
+app.get('/articles/', function(req, res) {
+
+console.log(30, req.url);
+
+var url_parts = url.parse(req.url, true);
+var query = url_parts.query;
+console.log(query);
+
+res.render('articles/index.ejs', {articles: articles});
 });
 
 // page that lets you submit a new article
@@ -40,8 +48,9 @@ app.post('/articles/new', function(req, res) {
   res.redirect('/articles');
 });
 
-// View a single article by id
+// View a single article by index
 app.get('/articles/:i', function(req, res) {
+  console.log(53, req.url);
   res.render('articles/single-article.ejs', {articles: articles, i: parseInt(req.params.i)});
 });
 
