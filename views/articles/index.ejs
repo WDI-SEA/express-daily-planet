@@ -1,0 +1,11 @@
+<ul>
+<% myArticles.forEach(function(article, index){ %> 
+	<li> <a href="/articles/<%= index%>"> <%=article.title %> is a <%= article.body %> </a> </li>
+	<%}); %>
+</ul>
+
+<form method="post" action="/articles">
+	<input type="text" name="type">
+	<input type="text" name="type">
+	<input type="submit">
+</form>
