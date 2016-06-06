@@ -1,0 +1,18 @@
+<% include ../partials/header.ejs %>
+
+<ul>
+  <% myArticles.forEach(function(article, index){ %>
+    <li><a href="/articles/<%= article.id %>"><%= article.title %></a></li>
+  <% }) %>
+</ul>
+
+<h4> Submit an article here: </h4>
+<form method="post" action="/articles">
+  <input type="text" name="title">
+  <input type="text" name="body">
+  <input type="submit">
+</form>
+
+
+
+<% include ../partials/footer.ejs %>
