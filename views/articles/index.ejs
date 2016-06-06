@@ -1,0 +1,11 @@
+<% include ../partials/header.ejs %> 
+
+<ul>
+  <% myArticles.forEach(function(article, index) { %>
+    <li><a href="/articles/<%= index %>"><%= article.title %></a></li>
+  <% }); %>
+</ul>
+
+<h2><a href="/articles/new">Create new article</a></h2>
+
+<% include ../partials/footer.ejs %> 
