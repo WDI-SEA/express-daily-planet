@@ -1,0 +1,66 @@
+h1 {
+  color: blue;
+  font-family: 'Playfair Display';
+}
+
+nav {
+  font-family: 'Playfair Display';
+}
+
+p {
+  font-family: 'News Cycle';
+  padding: 0px 35px;
+}
+
+li {
+  font-family: 'Playfair Display';
+}
+
+form {
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Playfair Display';
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 36px;
+  font-family: 'Playfair Display';
+  text-transform: uppercase;
+}
+
+.jumbotron {
+  font-family: 'News Cycle';
+}
+
+.centerit {
+  margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+#about-jumbo {
+  background: url("/img/aboutjumbo.jpg");
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  text-transform: lowercase;
+}
+
+#home-jumbo {
+  background: url("/img/superman.jpg");
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  text-transform: lowercase;
+}
+
