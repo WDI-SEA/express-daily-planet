@@ -1,0 +1,12 @@
+<% include ../partials/header %>
+
+<h1>Listing all articles <a href="/articles/new" class="btn btn-primary">New article</a></h1>
+
+<% articles.forEach(function(article, index) { %>
+
+	<li><a href="/articles/<%= index %>"><%= article.title %></a></li>
+	<li><%= article.body %></li>
+	<br>
+<% }); %>
+
+<% include ../partials/footer %>

@@ -1,0 +1,40 @@
+body {
+	background-color: #e9eaed;
+}
+
+.navbar-inverse {
+    background-color: #3a5795;
+    border-color: #103480;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: #385490;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    background-color: #385490;
+}
+
+.navbar {
+	margin-bottom: 20px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #4e69a2;
+    border-color: #435a8b;
+}
+
+.btn-primary:hover {
+	color: #fff;
+    background-color: #4e69a2;
+    border-color: #435a8b;
+}
