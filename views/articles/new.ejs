@@ -1,0 +1,15 @@
+<% include ../partials/header.ejs %>
+
+<h3>Submit a new Article</h3>
+<form method="post" action="/articles/new">
+  <input type="text" name="title" placeholder="Title">
+  <br>
+  <input type="text" name="body" placeholder="Type your article here">
+  <button type="submit">Submit</button>
+</form>
+
+<br>
+<a href="/">Home</a>
+
+
+<% include ../partials/footer.ejs %>
