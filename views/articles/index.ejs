@@ -1,0 +1,15 @@
+<% include ../partials/header.ejs %>
+ 
+ 
+
+ <div class="container">
+  <h2>Latest Articles </h2>
+  <% myArticles.forEach(function(article, index) {  %>
+    <div class= "container col-sm-6">
+      <h3><%= article.title %></h3>
+      <p class="breadcrumb"><%= article.body %></p>
+   </div>
+ <%  })  %>
+
+</div>
+<% include ../partials/footer.ejs %>

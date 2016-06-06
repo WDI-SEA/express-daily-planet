@@ -1,0 +1,23 @@
+<% include ../partials/header.ejs %>
+
+
+
+<div class = "container col-sm-6">
+<h2>Something You Want to Share?</h2>
+<form class="form-horizontal" action='/articles' method="post">
+  <label class="control-label">Headline:</label>
+    <div class="form-group">
+      <input type='text' name="title" class='form-control' id='enterTitle' placeholder='Headline'>
+    </div>
+
+    <label class="control-label">Body:</label>
+    <div class="form-group">
+      <textarea rows='3' name="body" class='form-control' id='enterArticle'></textarea></br>
+      <button type='submit' class='btn btn-default center-block'>Send Story!</button>
+    </div>
+</form>
+
+
+
+
+<% include ../partials/footer.ejs %> 
