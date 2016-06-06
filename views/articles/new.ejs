@@ -1,0 +1,12 @@
+<% include ./partials/header.ejs %>
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="/articles">Articles</a></li>
+  <li role="presentation"><a href="/contact">Contact</a></li>
+  <li role="presentation"><a href="/aboutme">About</a></li>
+</ul>
+<form method="post" action="/articles">
+  <input type = "text" name="title">
+  <input type = "text" name="body">
+  <input type = "submit" name="submit">
+</form>

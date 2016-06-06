@@ -1,0 +1,24 @@
+{
+  "name": "express-daily-planet",
+  "version": "1.0.0",
+  "description": "GA Express Tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pacalabre/express-daily-planet.git"
+  },
+  "author": "Paul Calabrese",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pacalabre/express-daily-planet/issues"
+  },
+  "homepage": "https://github.com/pacalabre/express-daily-planet",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
+  }
+}
