@@ -1,0 +1,14 @@
+<% include ../partials/header.ejs %>
+
+
+<div class="col-md-offset-2 col-md-8 col-md-offset-2">
+
+  <h1> The latest from The Daily Planet </h1>
+  <ul>
+    <% articles.forEach(function(article, index){ %>
+      <li><a class="no-spacing" href="/articles/<%= index %>"><%= article.title %> by <%= article.byline %> </a></li>
+     <% }); %>
+  </ul>
+  
+</div>
+<% include ../partials/footer.ejs %>
