@@ -1,0 +1,11 @@
+<% include ../partials/header.ejs %>
+
+<h2>Available Articles</h2>
+
+<ul>
+  <% articles.forEach(function(article) { %>
+    <li><%= article.title %></li>
+  <% }); %>
+</ul>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,12 @@
+<% include ../partials/header.ejs %>
+
+<h2>Add a New Article</h2>
+<h3>...but only if it's super cool...</h3>
+
+<form action="/articles" method="POST">
+  <input type="text" name="title">
+  <input type="text" name="body">
+  <input type="submit">
+</form>
+
+<% include ../partials/footer.ejs %>
