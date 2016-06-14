@@ -1,5 +1,9 @@
 <% include ../partials/header.ejs %>
 <div class="container">
+  <form action="/articles?q=search+term" method="POST">
+    <input type="text" id="userInput" placeholder="Article Topic">
+    <button type="button" id="search">Search</button>
+  </form>
   <h2>Available Articles</h2>
   <p><a class="btn btn-default" href="/articles/new" role="button">Submit an Article</a></p>
   <div class="row">

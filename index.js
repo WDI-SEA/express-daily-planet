@@ -10,8 +10,8 @@ app.set("view engine", "ejs");
 // set up body-parser
 app.use(bodyParser.urlencoded({ extended:false }));
 
-// link to folder with 'static pages to use like css/images/html'
-app.use(express.static('src'));
+// link to folder with "static pages to use like css/images/html"
+app.use(express.static("src"));
 
 // Below renders page
 app.get("/", function(req, res) {
@@ -56,3 +56,24 @@ app.get("/articles/:idx", function(req, res) {
 });
 
 app.listen(3000);
+
+app.post("/articles?q=search+term", function(req, res) {
+  var articles = fs.readFileSync("./data.json");
+  articles = JSON.parse(articles);
+  // Search object....
+});
+
+
+// For Reference
+// $("#startSearch").click(function() {
+//     var query = $("#userInput").val().trim();
+//     $.get("./data.json", {
+//       q: query
+//       // Fetch related posts from reddit with ajax
+//     }).done(function(data) {
+//       console.log(data);
+//     }).fail(function() {
+//       console.log("no results")
+//     }).always(function() {
+//     });
+//   });
