@@ -1,11 +1,27 @@
 <% include ../partials/header.ejs %>
-
-<h2>Available Articles</h2>
-
-<ul>
-  <% articles.forEach(function(article) { %>
-    <li><%= article.title %></li>
-  <% }); %>
-</ul>
-
+<div class="container">
+  <h2>Available Articles</h2>
+  <p><a class="btn btn-default" href="/articles/new" role="button">Submit an Article</a></p>
+  <div class="row">
+    <div class="col-xs-6 col-md-3">
+      <% articles.forEach(function(article, idx) { %>
+        <div class="thumbnail">
+          <img src="http://placekitten.com/g/250/200" alt="plain-article-img">
+          <div class="caption">
+            <h3><%= article.title %></h3>
+            <p><%= articles.summary %></p>
+            <p><a href="/articles/<%= idx %>" class="btn btn-primary" role="button">View</a>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</div>
 <% include ../partials/footer.ejs %>
+
+<!--   <ul>
+    <% articles.forEach(function(article) { %>
+      <li><%= article.title %></li>
+    <% }); %>
+  </ul>
+ -->

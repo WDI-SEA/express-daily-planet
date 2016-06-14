@@ -10,6 +10,9 @@ app.set("view engine", "ejs");
 // set up body-parser
 app.use(bodyParser.urlencoded({ extended:false }));
 
+// link to folder with 'static pages to use like css/images/html'
+app.use(express.static('src'));
+
 // Below renders page
 app.get("/", function(req, res) {
   res.render("index.ejs");
@@ -51,6 +54,5 @@ app.get("/articles/:idx", function(req, res) {
   var articleView = articles[req.params.idx];
   res.render("articles/show.ejs", { articles: articleView});
 });
-
 
 app.listen(3000);
