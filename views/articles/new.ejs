@@ -1,0 +1,11 @@
+<% include ../partials/header.ejs %>
+
+<h1>Add a new article</h1>
+
+<form action="/articles" method="POST">
+  <input type="text" name="title">
+  <input type="text" name="body">
+  <input type="submit">
+</form>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,22 @@
+.navbar {
+  background-color: #F7F7F7;
+}
+
+body {
+  padding-top: 70px;
+  background: url(http://media.insidepulse.com/old/columnImages2006/image27777.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+h1 {
+  /*text-align: center;*/
+  /*font-color: white;*/
+}
+
+h2 {
+  t/*ext-align: center;*/
+  /*font-color: white;*/
+}
