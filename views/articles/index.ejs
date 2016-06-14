@@ -1,0 +1,9 @@
+<% include ../partials/header.ejs %>
+  <h1>Articles</h1>
+
+  <% data.forEach(function(data, idx){ %>
+    <h2><%= data.title %></h2>
+    <a href="/articles/<%= idx %>">view Article</a>
+  <% }); %>
+
+<% include ../partials/footer.ejs %>
