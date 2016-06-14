@@ -4,8 +4,13 @@ h1 {
 
 .headline {
   text-align: center;
+  
 }
 
-img {
+body{
+  text-align: center;
+}
+
+.imgCar {
   width: 100%;
 }
