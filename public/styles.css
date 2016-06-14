@@ -2,6 +2,7 @@ body {
   text-align: center;
   font: normal 90% arial, helvetica, sans-serif;
   background-color: gray;
+  padding-bottom: 1em;
 }
 
 ul {
