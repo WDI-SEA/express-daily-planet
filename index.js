@@ -18,6 +18,7 @@ app.get('/contact', function(req, res) {
   res.render('sites/contact');
 });
 
+
 app.get('/article', function(req, res) {
   var articles = fs.readFileSync('./data.json');
   articles = JSON.parse(articles);
@@ -45,3 +46,5 @@ app.get('/article/:idx', function(req, res) {
 })
 
 app.listen(3000);
+
+
