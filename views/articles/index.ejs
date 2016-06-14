@@ -1,0 +1,12 @@
+<% include ../partials/header.ejs %>
+
+<h1>Daily Planet</h1>
+  <% data.forEach(function(article, idx) { %>
+    <div class="cell">
+      <h5><%= data[idx].title %></h3>
+      <p><%= data[idx].body %></p>
+      <a href="/articles/<%= idx %>">Link</a>
+    </div>
+  <% }) %>
+
+<% include ../partials/footer.ejs %>

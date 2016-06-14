@@ -1,0 +1,12 @@
+p {
+  /*max-width: 600px;*/
+  text-align: justify;
+  margin-top: 50px;
+}
+
+.cell {
+  width: 300px;
+  float: left;
+  /*margin: 10px 10px;*/
+  margin-left: 10px;
+}
