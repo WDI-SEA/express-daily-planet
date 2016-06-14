@@ -1,0 +1,13 @@
+<% include ../partials/header.ejs %>
+
+  <h1>New Article</h1>
+
+  <form action="/articles" method="POST">
+    <input type="text" name="title">
+    <input type="text" name="body"> 
+    <input type="submit">
+  </form>
+
+  <p>&copy; 2016 WDI Industries</p>
+
+<% include ../partials/footer.ejs %>
