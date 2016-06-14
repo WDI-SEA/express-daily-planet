@@ -1,0 +1,12 @@
+<% include ../partials/header.ejs %>
+
+  <h1>Article Search List</h1>
+
+  <a href="/articles/new">Create a new article</a>
+
+  <% results.forEach(function(result, idx) { %>
+    <h2><%= result.title %></h2>
+    <h2><%= result.body %></h2>
+   <% }); %>
+
+<% include ../partials/footer.ejs %>

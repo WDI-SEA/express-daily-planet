@@ -1,3 +1,8 @@
+body {
+  text-align: center;
+  font: normal 90% arial, helvetica, sans-serif;
+}
+
 ul {
   padding: .2em 0;
   margin: 0;
@@ -5,8 +10,6 @@ ul {
   background-color: #036;
   color: #FFF;
   width: 100%;
-  font: normal 90% arial, helvetica, sans-serif;
-  text-align: center;
 }
 
 li { 
@@ -24,4 +27,8 @@ border-right: 1px solid #fff;
 li a:hover {
 background-color: #369;
 color: #fff;
+}
+
+button {
+  
 }
