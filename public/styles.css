@@ -1,6 +1,7 @@
 body {
   text-align: center;
   font: normal 90% arial, helvetica, sans-serif;
+  background-image: url('/planetERF.jpg');
 }
 
 ul {
