@@ -3,6 +3,8 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 var app = express();
 
+app.use(express.static('public'));  
+
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -17,7 +19,6 @@ app.get('/about', function(req, res) {
 app.get('/contact', function(req, res) {
   res.render('sites/contact');
 });
-
 
 app.get('/article', function(req, res) {
   var articles = fs.readFileSync('./data.json');
