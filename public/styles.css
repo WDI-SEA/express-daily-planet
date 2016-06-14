@@ -1,7 +1,7 @@
 body {
   text-align: center;
   font: normal 90% arial, helvetica, sans-serif;
-  background-image: url('/planetERF.jpg');
+  background-color: gray;
 }
 
 ul {
@@ -25,6 +25,10 @@ padding: .2em 1em;
 border-right: 1px solid #fff;
 }
 
+a {
+  text-decoration: none;
+}
+
 li a:hover {
 background-color: #369;
 color: #fff;
@@ -32,4 +36,12 @@ color: #fff;
 
 button {
   
+}
+
+header {
+  background-color: #d1c7ff;
+}
+
+footer {
+  background-color: #d1c7ff; 
 }
