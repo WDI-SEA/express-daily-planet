@@ -2,8 +2,9 @@
 
 <h1>Articles</h1>
 
-<% articles.forEach(function(article) { %>
+<% articles.forEach(function(article, idx) { %>
     <h2><%= article.title %></h2>
+    <a href="/articles/<%= idx %>">View Article</a>
  <% }); %>
 
 <p>&copy; WDI 08</p>

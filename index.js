@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 //  run express function
 var app = express();
 
+app.use(express.static('public'));
+
+
 //  set up view engine to view ejs files
 app.set('view engine', 'ejs');
 //  set up bodyParser
