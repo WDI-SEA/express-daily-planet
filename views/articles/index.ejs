@@ -1,0 +1,12 @@
+<% include ../partials/header.ejs %>
+
+<h1>Daily Bugle Articles</h1>
+
+<% articles.forEach(function(articles, idx) { %>
+  <h2><%= articles.title %></h2>
+  <a href="/articles/<%= idx %>">View articles</a>
+<% }); %>
+
+<p>&copy; 2016 WDI Industries.</p>
+
+<% include ../partials/footer.ejs %>

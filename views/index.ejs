@@ -1,0 +1,12 @@
+<% include partials/header.ejs %>
+
+<h1>Daily Bugle Newspaper!</h1>
+
+<form action="/articles?q=" method="GET" accept-charset="utf-8">
+  <input type="text" name="search" placeholder="Search">
+  <input type="submit" name="searchBtn">
+</form>
+
+<p>&copy; 2016 WDI Industries.</p>
+
+<% include partials/footer.ejs %>
