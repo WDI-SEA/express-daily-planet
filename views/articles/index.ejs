@@ -1,0 +1,9 @@
+
+<h1> Daily Planet </h1>
+
+<a href="/articles/new" >Articles</a>
+<% articles.forEach(function(articles, idx) { %>
+  <h2><%= articles.title %></h2>
+  <a href="/articles/<%= idx %>">View article</a>
+  <% }); %>
+
