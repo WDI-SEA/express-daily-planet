@@ -4,8 +4,7 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 // express app
 var app = express();
-// json Data to be transformed to be searched through
-var data = require('./data.json');
+
 
 // applying the views engine, ejs
 app.set('view engine', 'ejs');
@@ -35,6 +34,7 @@ app.post('/articles', function(req, res) {
   articles.push(req.body);
   fs.writeFileSync('./data.json', JSON.stringify(articles));
   res.redirect('/articles');
+  console.log(req.body);
 });
 
 app.get('/articles/:idx', function(req, res) {
@@ -59,13 +59,15 @@ var searchArticles = function(data, term){
     return results;
   } else {
   var results = data.filter(function(entry) {
-    return entry.title.toUpperCase() === term;
+    return (entry.title.toUpperCase().indexOf(term) !== -1) || (entry.body.toUpperCase().indexOf(term) !== -1);
   });
   }
   return (results);
 };
 
 app.get('/search', function(req, res) {
+  // json Data to be transformed to be searched through
+  var data = require('./data.json');
   var term = req.query.search;
   var articles = fs.readFileSync('./data.json');
   articles = JSON.parse(articles);
