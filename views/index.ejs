@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DAILY PLANATE</title>
+</head>
+<body>
+<h1>DAILY PLANET</h1>
+
+  <% articleList.forEach(function(article, index) { %>
+     <h2><a href="/articles/<%= index %>"> <%= article.title %></a></h2>  
+     <p><%= article.body %></p>
+  <% }); %>
+
+</body>
+</html>
