@@ -4,7 +4,7 @@
 <h2>Articles</h2>
 
 
-  <% articles.forEach(function(article) { %>
+  <% articles.forEach(function(article, index) { %>
     
     <h3>
     <%= article.title %>
@@ -12,7 +12,9 @@
 
     <p>
     <%= article.body %>
+    <a href="/articles/<%=index%>">...</a>
     </p>
+
 
 
   <% }); %> 

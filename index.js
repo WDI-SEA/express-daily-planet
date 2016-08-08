@@ -47,13 +47,10 @@ app.post('/articles', function(req, res) {
   res.redirect('/articles');
 });
 
-// GET /articles/:id
-// view: views/articles/show.ejs
-// purpose: find an article by id in the array of articles and display it.
-app.get('/articles/:id', function(req, res){
+app.get('/articles/:index', function(req, res){
   var fileContents = fs.readFileSync('./data.json');
   var data = JSON.parse(fileContents);
-  var articleIndex = parseInt(req.params.index)
+  var articleIndex = parseInt(req.params.index);
   res.render('articles/show', {articles: data[articleIndex]});
 });
 
@@ -62,3 +59,6 @@ app.get('/articles/:id', function(req, res){
 // ========
 
 app.listen(3000);
+
+
+
