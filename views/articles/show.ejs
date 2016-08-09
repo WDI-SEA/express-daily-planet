@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>myArticles.title</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+
+    <body>
+     <% include ../partials/nav.ejs %>
+      <h1 style="text-align:center"><%= myArticles.title %> </h1> <br>
+      <p style="text-align:justify; width: 700px; border:5px solid black; margin: 0 auto; padding:10px"><%- myArticles.body %></p>
+
+
+    </body>
+  </html>
