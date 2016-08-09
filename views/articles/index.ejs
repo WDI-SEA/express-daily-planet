@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page</title>
+</head>
+
+<body>
+
+<h1> This is my view </h1>
+
+
+
+<form method="POST" action="articles">
+
+<label for="articleTitle">Headline</label>
+<input type="text" name="title">
+
+<label for="articleBody">Body</label>
+<input type="text" name="body">
+
+<input type="submit">
+
+</form>
+
+
+
+<% articles.forEach(function(article) { %>
+    <h2> <%= article.title %> </h2>
+
+<% }); %>
+
+
+
+
+</body>
+
+</html>
