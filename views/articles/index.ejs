@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page</title>
+</head>
+<body>
+  <h1>This is my view!</h1>
+
+  <% articles.forEach(function(article){ %>
+  <h2><%= article.title %></h2>
+  <p><%= article.body %></p>
+  <% }); %>
+  
+</body>
+</html>
