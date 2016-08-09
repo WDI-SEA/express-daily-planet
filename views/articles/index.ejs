@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page</title>
+</head>
+<body>
+  <h1>Articles in JSON</h1>
+
+  <ul>
+  <% articles.forEach(function(data, index) { %>
+    <li><a href="/articles/<%= index %>"><%= data.title %></a></li>
+    <li><%= data.body %></li>
+  <% }); %>
+  </ul>
+</body>
+</html>
