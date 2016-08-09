@@ -56,10 +56,25 @@ app.post('/articles', function(req, res) {
 
 
 //find article by ID in the array of articles
+app.get('/articles/:id', function(req, res) {
 
-app.get('/articles/:index', function(req, res) {
-  var articlesIndex = parseInt(req.params.index);
-  res.render('articles/index', {myArticle: articles[articleIndex]});
+  //INCORRECT 
+  //var articlesIndex = parseInt(req.params.index);
+  //res.render('articles/index', {myArticle: articles[articleIndex]});
+
+  //PROPER 
+  var fileContents = fs.readFileSync('./data.json');
+  var data = JSON.parse(fileContents);
+
+  if ((isNaN(req.params.id) || (req.params.id) > data.length - 1)) {
+    console.log("index outside of array");
+  }
+  else
+  {
+      res.render("article", {title: data[req.params.id].title, 
+                              body: data[req.params.id].body})
+  }
+  
 });
 
 
