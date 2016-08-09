@@ -24,14 +24,18 @@ app.get("/articles", function(req, res){
   res.render('articles/index', {myArticles: data});  
 });
 
+app.get("/articles/new", function(req, res){
+  res.render('new');  
+});
+
 // POST 
 app.post('/articles', function(req,res){
   //console.log(req.body);
-  
+
   data.push(req.body);
 
   fs.writeFileSync('data.json', JSON.stringify(data));
-
+  
   res.redirect('/articles');
 });
 
