@@ -1,6 +1,12 @@
+<% include ../partials/header.ejs %>
+<div class="row">
+<div class="col-md-6 col-md-offset-2">
 <h2>Article List</h2>
 <ul>
 <% articleList.forEach(function(article) { %>
    <li> <%= article.title %> <%= article.body %> </li>
 <% }); %>
 </ul>
+</div>
+</div>
+<% include ../partials/footer.ejs %>

@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>DAILY PLANATE</title>
-</head>
-<body>
+<% include ./partials/header.ejs %>
+
+<div class="row">
+<div class="col-md-6 col-md-offset-2">
 <h1>DAILY PLANET</h1>
 
   <% articleList.forEach(function(article, index) { %>
      <h2><a href="/articles/<%= index %>"> <%= article.title %></a></h2>  
      <p><%= article.body %></p>
   <% }); %>
+  
+</div>
+</div>
 
-</body>
-</html>
+<% include ./partials/footer.ejs %>

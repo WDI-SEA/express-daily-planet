@@ -28,11 +28,23 @@ app.get("/new", function(req,res){
 
 app.post("/articles", function(req, res){
   data.push(req.body);
-  res.redirect("/new");
+  res.redirect("/articles");
 });
 
 app.get("/articles/:index", function(req, res){
   res.render("articles/show", {articleList: data[parseInt(req.params.index)]});
+});
+
+app.get("/about", function(req, res){
+  res.render("about");
+});
+
+app.get("/contact", function(req, res){
+  res.render("contact");
+});
+
+app.post("/contact", function(req, res){
+  res.render("index");
 });
 
 //Listen(!)
