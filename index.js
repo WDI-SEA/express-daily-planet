@@ -63,15 +63,15 @@ app.get('/articles/:index', function(req, res) {
 });
 
 
-app.get('../site/about.ejs', function(req, res) {
+app.get('../site/about', function(req, res) {
   //console.log("see about page");
   res.render('../site/about.ejs');
 
 });
 
-app.get('../site/contact.ejs', function(req, res) {
+app.get('../site/contact', function(req, res) {
   //console.log("see contact page");
-  res.render('../site/contact.ejs');
+  res.render('../site/contact');
 
 });
 
