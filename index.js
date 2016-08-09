@@ -5,7 +5,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var fs = require('fs');
-
 var app = express();
 
 //sample code for below
@@ -48,24 +47,33 @@ app.post('/articles', function(req, res) {
   //console.log(req.body);
   var fileContents = fs.readFileSync('./data.json');
   var data = JSON.parse(fileContents);
-
   //console.log("post is called");
-
   data.push(req.body);
-
   //console.log(data);
-
   fs.writeFileSync('./data.json', JSON.stringify(data));
   res.redirect('articles');
 });
 
 
 //find article by ID in the array of articles
+
 app.get('/articles/:index', function(req, res) {
   var articlesIndex = parseInt(req.params.index);
   res.render('articles/index', {myArticle: articles[articleIndex]});
 });
 
+
+app.get('../site/about.ejs', function(req, res) {
+  //console.log("see about page");
+  res.render('../site/about.ejs');
+
+});
+
+app.get('../site/contact.ejs', function(req, res) {
+  //console.log("see contact page");
+  res.render('../site/contact.ejs');
+
+});
 
 
 //listen
