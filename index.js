@@ -28,6 +28,7 @@ app.get("/new", function(req,res){
 
 app.post("/articles", function(req, res){
   data.push(req.body);
+  fs.writeFileSync('./data.json', JSON.stringify(data));
   res.redirect("/articles");
 });
 
