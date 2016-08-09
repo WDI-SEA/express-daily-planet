@@ -39,6 +39,16 @@ app.post("/articles", function(req, res){
   res.redirect('/articles');
 });
 
+/////////////////////ABOUT AND CONTACT PAGE!!!/////////////////////
+app.get('/about', function(req, res) {
+  res.sendFile('/about.ejs');
+});
+app.get('/contact', function(req, res) {
+  res.sendFile('/contact.ejs');
+});
+
+
+
 ///find an article by id in the array of articles and display it.
 app.get("/articles/:id", function(req, res){
   //read JSON
