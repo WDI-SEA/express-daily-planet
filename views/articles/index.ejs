@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<h1>All Articles in JSON</h1>
+<br>
+<% myArticles.forEach(function(data, index){ %>
+  <li><a href="/articles/<%= index%>"><%= data.title %></a></li>
+  <li><%= data.body %></li>
+  
+   <br>
+<% }); %>
+
+<form method="POST" action="/articles">
+  <label for="articleTitle">Title of article</label>
+  <input type="text" name="title">
+
+<label for="articleBody">Body of article</label>
+  <input type="text" name="body">
+
+  <input type="submit">
+</form>
+
+</body>
+</html>
