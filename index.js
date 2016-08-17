@@ -6,7 +6,7 @@ var app = express();
 var data = [];
 var fileContents = fs.readFileSync('./data.json');
 data = JSON.parse(fileContents);
-
+    
 //Set/Use Statements
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: false}));
