@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DAILY PLANET</title>
+</head>
+
+<body>
+
+<h1> DAILY PLANET HOMEPAGE </h1>
+
+
+
+
+<ul>
+  <li><a href="">Home</a></li>
+  <li><a href="">News</a></li>
+  <li><a href="../site/contact.ejs">Contact</a></li>
+  <li><a href="../site/about.ejs">About</a></li>
+</ul>
+
+<h2> NEW ARTICLE? POST IT HERE </h2>
+
+<form method="POST" action="articles">
+  <label for="articleTitle">Headline</label>
+  <input type="text" name="title">
+  
+  <label for="articleBody">Body</label>
+  <input type="text" name="body">
+  
+  <input type="submit">
+</form>
+
+
+
+
+<h2> ARTICLE HEADLINES </h2>
+
+<% articles.forEach(function(article) { %>
+    <h3> <%= article.title %> </h3>
+
+<% }); %>
+
+
+
+
+
+</body>
+
+</html>
