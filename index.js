@@ -3,6 +3,8 @@ var bodyParser = require("body-parser");
 var fs = require("fs");
 
 var app = express();
+var articlesFromJsonFile = fs.readFileSync("./data.json");
+var parsedArticles = JSON.parse(articlesFromJsonFile);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
@@ -13,8 +15,6 @@ app.get("/", function(req, res) {
 });
 
 app.get("/articles", function(req, res) {
-	var articlesFromJsonFile = fs.readFileSync("./data.json");
-	var parsedArticles = JSON.parse(articlesFromJsonFile);
 	console.log(parsedArticles);
 	res.render("./articles/index.ejs", { articles: parsedArticles });
 });
@@ -23,15 +23,36 @@ app.get("/articles/new", function(req, res) {
 	// title and body are the inputs of our form
 	res.render("./articles/new.ejs");
 });
-// * `GET /articles/new`
-//   * view: `views/articles/new.ejs`
-//   * purpose: displays a form that users use to create a new article
-// * `POST /articles`
-//   * view: none (redirects to /articles after the article is created)
-//   * purpose: creates a new article (adds to articles array and saves the file)
-// * `GET /articles/:id`
-//   * view: `views/articles/show.ejs`
-//   * purpose: find an article by id in the array of `articles` and display it.
+
+app.post("/articles/new", function(req, res) {
+	var articlesFromJsonFile = fs.readFileSync("./data.json");
+	// add to our list of articles
+	parsedArticles.push(req.body);
+	fs.writeFileSync("./data.json", JSON.stringify(parsedArticles));
+	res.redirect("/articles/new");
+});
+
+app.get("/articles/:id", function(req, res) {
+	// figure out how to make this a number if it looks like anumber
+	var id = parseInt(req.params.id);
+
+	if(typeof(id) != "number"){
+		res.send("please input a number as an id");
+	} else if(id >= parsedArticles.length) {
+		res.send("please input an id number that is lees than " + parsedArticles.length);
+	} else {
+		res.render("./articles/show.ejs", { title: parsedArticles[id].title, body: parsedArticles[id].body });
+	}
+
+});
+
+app.get("/about", function(req, res) {
+	res.render("about");
+});
+
+app.get("/contact", function(req, res) {
+	res.render("contact");
+});
 
 // #### Static Pages
 // Create the following routes for static pages. You can use EJS with these pages, but you won't be passing any data.
