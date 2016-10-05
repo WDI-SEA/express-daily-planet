@@ -1,0 +1,29 @@
+<!-- displays a form that users use to create a new article -->
+
+<% include ../partials/header.ejs %>
+
+<h2>Submit a new story</h2>
+
+
+
+<form method='POST' action='/articles'>
+<div class='form-group'>
+    <label for='articleTitle'>
+      Title: 
+    </label>
+    <input type='text' class='form-control' name='title'>
+  </div>
+
+  <div class='form-group'>
+    <label for='articleBody'>
+      Body:
+    </label>
+    <textarea class='form-control' rows='4' type='text' name='body'></textarea>
+  </div>
+
+  <input type='submit'>
+
+</form>
+</div>
+
+<% include ../partials/footer.ejs %>
