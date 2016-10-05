@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+	<h1>GOOD AFTERNOON (this is articles/index.ejs)</h1>
+
+	<form method="post" action="/searchArticles">
+		Search for article
+		<input type="text" name="searchQuery">
+		<input type="submit" value="Search">
+	</form>
+
+	<ul>
+		<% articles.forEach(function(article){ %>
+			<li class="articleList">
+				<h4><%= article.title %></h4> 
+				<%= article.body %>
+			</li>
+		<% }); %>
+	</ul>
+
+</body>
+</html>
