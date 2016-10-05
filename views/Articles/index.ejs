@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Daily Planet News</title>
+	<link rel="stylesheet" type="text/css" href="../../styles.css">
+	<link rel="stylesheet" type="text/css" href="../../material.min.css">
+</head>
+<body>
+
+
+<a href="http://localhost:3000/">Daily Planet Homepage</a>
+<h1>Articles</h1>
+
+
+
+<ul>
+	<% articles.forEach(function(article){ %>
+		<li>
+			<strong><%= article.title %></strong>	:	<%= article.body %>
+		</li>
+
+
+		<% }); %>
+	
+</ul>
+
+<a href="http://localhost:3000/articles/new">Click here to add an article!</a>
+
+
+</body>
+</html>
