@@ -1,0 +1,19 @@
+<% include ../partials/header.ejs %>
+<div class="row">
+<div class="col-md-6 col-md-offset-2">
+<h1>SUBMIT A STORY TO THE DAILY PLANET</h1>
+<p>thank you for doing our job for free, article person.</p>
+
+<form method="POST" action="/articles" id="articleInput">
+  <label for="articleTitle">Title</label>
+  <input type="text" name="title">
+
+<!--   <label for="articleBody">Body</label>
+  <input type="textarea" name="body">
+ -->
+  <input type="submit">  
+</form>
+  <textarea name="body" form="articleInput">TYPE YOUR CONTENT HERE</textarea>
+</div>
+</div>
+<% include ../partials/footer.ejs %>

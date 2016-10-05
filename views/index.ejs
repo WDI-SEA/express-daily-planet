@@ -1,0 +1,15 @@
+<% include ./partials/header.ejs %>
+
+<div class="row">
+<div class="col-md-6 col-md-offset-2">
+<h1>DAILY PLANET</h1>
+
+  <% articleList.forEach(function(article, index) { %>
+     <h2><a href="/articles/<%= index %>"> <%= article.title %></a></h2>  
+     <p><%= article.body %></p>
+  <% }); %>
+  
+</div>
+</div>
+
+<% include ./partials/footer.ejs %>

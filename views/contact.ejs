@@ -1,0 +1,18 @@
+<% include ./partials/header.ejs %>
+<div class="row">
+<div class="col-md-6 col-md-offset-2">
+<h1>Contact Form</h1>
+<p>Step right up and submit a complaint. We promise not to read it</p>
+<form method="POST" action="/contact" id="articleInput">
+  <label for="articleTitle">Your Email</label>
+  <input type="email" name="email">
+
+<!--   <label for="articleBody">Body</label>
+  <input type="textarea" name="body">
+ -->
+  <input type="submit">  
+</form>
+  <textarea name="body" form="articleInput">TYPE YOUR COMMENT HERE</textarea>
+</div>
+</div>
+<% include ./partials/footer.ejs %>
