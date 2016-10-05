@@ -6,6 +6,7 @@ var app = express();
 var articlesFromJsonFile = fs.readFileSync("./data.json");
 var parsedArticles = JSON.parse(articlesFromJsonFile);
 
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 
@@ -39,7 +40,7 @@ app.get("/articles/:id", function(req, res) {
 	if(typeof(id) != "number"){
 		res.send("please input a number as an id");
 	} else if(id >= parsedArticles.length) {
-		res.send("please input an id number that is lees than " + parsedArticles.length);
+		res.send("please input an id number that is less than " + parsedArticles.length);
 	} else {
 		res.render("./articles/show.ejs", { title: parsedArticles[id].title, body: parsedArticles[id].body });
 	}

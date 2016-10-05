@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>All Articles</title>
 </head>
 <body>
+	<% include ../partials/header.ejs %>
 	<h1>All Articles</h1>
 
 	<ul>
@@ -13,5 +15,8 @@
 			</li>
 		<% }); %>
 	</ul>
+	<div>
+		<p><a href="/articles/new">add an article</a></p>
+	</div>
 </body>
 </html>
