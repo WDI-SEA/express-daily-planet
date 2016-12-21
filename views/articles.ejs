@@ -1,0 +1,12 @@
+<h1>News Articles</h1>
+<p>Read the synopsis of the news</p>
+
+<ul>
+	<% articles.forEach(function(article) { %>
+		<li>
+			<strong><%= article.title %></strong>:<%= article.body %>
+		</li>
+	<% }); %>
+</ul>
+
+<br><br>
