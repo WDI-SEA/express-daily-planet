@@ -14,17 +14,25 @@ app.use(bodyParser.urlencoded({
 }));
 
 //routes
+//about
+app.get("/about", function(req, res) {
+    res.render("site/aboutInfo");
+});
+//contact
+app.get("/contact", function(req, res) {
+    res.render("site/contactInfo");
+});
 // home page
 app.get("/", function(req, res) {
     // res.send('HELLO TACO!!!');
-    res.render("home");
+    res.render("site/home");
 });
 
 // gets all articles  db. is based on folder models name
 app.get("/articles", function(req, res) {
     db.article.findAll().then(function(articles) {
         console.log(articles);
-        res.render("allArticles", {
+        res.render("articles/allArticles", {
             articles: articles
         });
     });
@@ -36,7 +44,7 @@ app.get("/article/:id", function(req, res) {
     // res.send("article by id works");
     // console.log(req.params.id);
     db.article.findById(req.params.id).then(function(article) {
-        res.render("oneArticle", {
+        res.render("articles/oneArticle", {
             article: article
         });
     });
@@ -44,7 +52,7 @@ app.get("/article/:id", function(req, res) {
 
 //get new article form
 app.get("/articles/new", function(req, res) {
-    res.render("newArticle");
+    res.render("articles/newArticle");
     // res.send("hi");
 });
 
