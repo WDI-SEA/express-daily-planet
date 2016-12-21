@@ -1,0 +1,12 @@
+<div class="header">
+<h1>The Need-To-Know News Stories</h1>
+<h3>The future of our world begins with what's going on today!</h3>
+</div>
+
+<ul>
+	<% articles.forEach(function(article){ %>
+		<li style="font-size: 24px">
+			<strong><%= article.title %></strong>: <%= article.body %>
+		</li>
+	<% }); %>
+</ul>
