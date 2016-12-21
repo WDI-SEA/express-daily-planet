@@ -55,16 +55,15 @@ app.get('/contact', function(req,res){
   res.render('site/contact');
 });
 
-app.get('/search/:query', function(req,res){
-  var q = req.params.query;
+app.get('/search', function(req,res){
+  var q = req.params.queryString;
 
-  console.log(q+'');
-  console.log("got to search results ??dog");
+  console.log("query is: "+q);
 
   function isMatch(article,q){
     q = q.toLowerCase();
     var title = article.title.toLowerCase();
-    var content = article.content.toLowerCase();
+    var content = article.body.toLowerCase();
     if(title.indexOf(q)>=0||content.indexOf(q)>=0){
       return true;
     }
@@ -79,9 +78,8 @@ app.get('/search/:query', function(req,res){
         searchResults.push(articles[i]);
       }
     }
-    res.render('site/search',{results:searchResults});
+    res.render('site/search',{searchResults:searchResults});
   });
-
 });
 
 
