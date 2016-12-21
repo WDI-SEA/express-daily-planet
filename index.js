@@ -62,11 +62,15 @@ app.get("/articles/:id", function(req, res) {
 /* STATIC PAGES */
 // GET /about
 // serve a static about daily planet page.
-
+app.get("/about", function(req, res) {
+  res.render("site/about");
+});
 
 // GET /contact
 // serve a static contact page.
-
+app.get("/contact", function(req, res) {
+  res.render("site/contact");
+});
 
 /* LISTEN */
 var port = 3000;
