@@ -44,11 +44,11 @@ app.get("/articles", function(req, res) {
 });
 
 // Find an article by id in the array of articles and display it.
-// app.get("/articles/:id", function(req, res) {
-// 	db.articles.findById(req.params.id).then(function(article) {
-// 		res.render("/articles/show", {article: article}); 
-// 	});
-// });
+app.get("/articles/:id", function(req, res) {
+	db.article.findById(req.params.id).then(function(article) {
+		res.render("./articles/show", {article: article}); 
+	});
+});
 
 // Get new article form
 app.get("/articles/new", function(req, res) {
