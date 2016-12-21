@@ -22,12 +22,17 @@ app.get("/articles/new", function(req, res) {
   res.render("articles/new.ejs");
 });
 
-app.post("/articles", function(req, res) {
-  res.redirect("/articles");
+app.post("/articles/new", function(req, res) {
+  db.article.create(req.body).then(function(article) {
+    res.redirect("/articles");
+  });
 });
 
 app.get("/articles/:id", function(req, res) {
-  res.render("articles/show.ejs");
+  db.article.findById(req.params.id).then(function(article) {
+    console.log("hi");
+    res.render("articles/show.ejs", {article: article});
+  });
 });
 
 app.get("/about", function(req, res) {
