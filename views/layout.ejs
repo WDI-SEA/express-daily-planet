@@ -20,13 +20,24 @@
   <body>
     <div class="container">
       <h1>Express News</h1>
-      <%- body %>
+      <form method="POST" action="#">
+        <div class="form-group">
+          <label for="search">Search Articles:</label>
+          <input type="text" name="search" id="search" class="form-control" placeholder="Search"/>
+        </div>
+        <input type="submit" class="btn btn-success" value="submit" style="display: none;"/>
+      </form>
+      <div class="row">
+        <div class="col-xs-12">
+          <a href="/" class="btn btn-primary">Home</a>
+          <a href="/about" class="btn btn-info">About</a>
+          <a href="/contact" class="btn btn-info">Contact</a>
+          <a href="/articles/index" class="btn btn-success">Articles</a>
+          <a href="/articles/new" class="btn btn-success">Add Article</a>
+        </div>
+      </div>
       <hr />
-      <a href="/" class="btn btn-primary">Home</a>
-      <a href="/about" class="btn btn-info">About</a>
-      <a href="/contact" class="btn btn-info">Contact</a>
-      <a href="/articles/index" class="btn btn-success">Articles</a>
-      <a href="/articles/new" class="btn btn-success">New Article</a>
+      <%- body %>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
