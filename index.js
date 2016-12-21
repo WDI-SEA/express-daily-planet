@@ -16,7 +16,6 @@ app.use(bodyParser.urlencoded({extended: false})); //boilerplate
 
 
 //ROUTES
-
 //goes to home page of site
 app.get('/',function(req,res){
   res.render('site/home');
@@ -54,6 +53,35 @@ app.get('/about', function(req,res){
 
 app.get('/contact', function(req,res){
   res.render('site/contact');
+});
+
+app.get('/search/:query', function(req,res){
+  var q = req.params.query;
+
+  console.log(q+'');
+  console.log("got to search results ??dog");
+
+  function isMatch(article,q){
+    q = q.toLowerCase();
+    var title = article.title.toLowerCase();
+    var content = article.content.toLowerCase();
+    if(title.indexOf(q)>=0||content.indexOf(q)>=0){
+      return true;
+    }
+  }
+
+  db.news.findAll().then(function(articles){
+    var searchResults = [];
+
+    //filter results
+    for(var i=0; i<articles.length; i++){
+      if(isMatch(articles[i],q)){
+        searchResults.push(articles[i]);
+      }
+    }
+    res.render('site/search',{results:searchResults});
+  });
+
 });
 
 
