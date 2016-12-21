@@ -1,0 +1,8 @@
+<% articles.forEach(function(article){ %>
+  <h3>
+    <a href="/article/<%- article.id %>"<%- article.title %></a>
+  </h3>
+  <p>
+    <%- article.body %>
+  </p>
+<% }); %>
