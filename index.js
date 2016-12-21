@@ -56,8 +56,8 @@ app.get('/contact', function(req,res){
 });
 
 app.get('/search', function(req,res){
-  var q = req.params.queryString;
 
+  q = req.query.searchArticles;
   console.log("query is: "+q);
 
   function isMatch(article,q){
