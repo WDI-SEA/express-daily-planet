@@ -43,13 +43,6 @@ app.get("/articles", function(req, res) {
 	});
 });
 
-// Find an article by id in the array of articles and display it.
-app.get("/articles/:id", function(req, res) {
-	db.article.findById(req.params.id).then(function(article) {
-		res.render("./articles/show", {article: article}); 
-	});
-});
-
 // Get new article form
 app.get("/articles/new", function(req, res) {
 	res.render("./articles/new");
@@ -62,6 +55,35 @@ app.post("/articles/new", function(req, res) {
 	}); 
 });
 
+// Find an article by id in the array of articles and display it.
+app.get("/articles/:id", function(req, res) {
+	db.article.findById(req.params.id).then(function(article) {
+		res.render("./articles/show", {article: article}); 
+	});
+});
+
 
 // LISTEN
 app.listen(3000); // This is how it knows which localhost address to use for index page
+
+
+
+// SEARCH BAR FUNCTIONALITY
+
+// <form action="/search" method="GET">
+// 	<input name="query"/>
+// 	<input type="submit"/>
+// <form>
+
+// app.get('/search/:query,' function(req, res) {
+// 	var q = req.params.query;
+// 	db.article.findAll(function(articles) {
+// 		var searchResults = [];
+
+// 		// Filter results
+// 		for (var i = 0; i < articles.length; i++) {
+// 			if (articles.)
+// 				searchResults.push(articles[i];)
+// 		}
+// 	});
+// })
