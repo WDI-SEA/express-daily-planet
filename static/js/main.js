@@ -1,11 +1,7 @@
 // - Were we supposed to be filling in text with DOM manipulation or refreshing pages?
 // - Why does the first time it's loaded not work to refresh the page?
-// - Does ordering of routes in index.js matter? e.g., when i used /articles/:id
-// and /articles/new was requested, it didnt recognize the "new" article.
 // - Do we always need to send a response be it render or send data?
 // - Still need to add graceful failing page under 'clean it up' section
-// - Inputs still not sanitized
-// - Added the .reverse() to order newest at the top!
 
 console.log('js loaded');
 
