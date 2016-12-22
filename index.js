@@ -37,7 +37,7 @@ app.get('/contact', function(req,res){
 
 //goes to all articles
 app.get('/articles/', function(req,res){
-  db.news.findAll().then(function(articles){
+  db.news.findAll({order: '"createdAt" DESC'}).then(function(articles){
     res.render('articles/index',{articles:articles});
   }, function() {
     res.render('site/database-issue');
@@ -121,17 +121,17 @@ app.get('/search', function(req,res){
     }
   }
 
-  db.news.findAll().then(function(articles){
+  db.news.findAll({order: '"createdAt" DESC'}).then(function(articles){
     var searchResults = [];
 
     //filter results
     for(var i=0; i<articles.length; i++){
-      console.log("i: "+i)
+      
       if(isMatch(articles[i],q)){
         searchResults.push(articles[i]);
       }
     }
-    res.render('site/search',{searchResults:searchResults});
+    res.render('articles/search',{searchResults:searchResults});
   }, function(){
     res.render('site/database-issue');
   });
