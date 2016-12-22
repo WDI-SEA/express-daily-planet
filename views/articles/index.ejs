@@ -7,6 +7,12 @@
       </a>
     </p>
     <p><%= article.content %></p>
+    <a href="/articles/<%= article.id %>/edit" class="edit-link btn btn-xs btn-warning">
+      edit
+    </a>
+    <a href="/articles/<%= article.id %>" class="delete-link btn btn-xs btn-danger">
+      delete
+    </a>
   </div>
 </div>
 <hr>
