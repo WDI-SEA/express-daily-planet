@@ -1,0 +1,22 @@
+<h1>EDIT ARTICLE</h1>
+
+<div class="row">
+  <div class="col-xs-12">
+    <form action="/articles/<%= article.id %>" method="PUT" role="form" class="put-form">
+      <div class="form-group">
+        <label for="title" class="hidden">Title</label>
+        <input type="text" class="form-control" value="<%= article.title %>" name="title">
+      </div>
+      <div class="form-group">
+        <label for="author" class="hidden">Author</label>
+        <input type="text" class="form-control" value="<%= article.author %>" name="author">
+      </div>
+      <div class="form-group">
+        <label for="body" class="hidden">Body</label>
+        <textarea type="text" class="form-control" name="body"><%= article.body %></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button> <button class="btn btn-default" onclick="window.location.href='/articles/<%= article.id %>'">Cancel <i-glyphicon class="glyphicon glyphicon-arrow-left"></i></button> <button class="btn btn-default" onclick="window.location.href='/articles'">Back to ARTICLES <i-glyphicon class="glyphicon glyphicon-list"></i></button>
+    </form>
+  </div>
+</div>
