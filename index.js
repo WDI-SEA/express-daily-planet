@@ -61,26 +61,27 @@ app.get("/articles/:id", function(req, res) {
 });
 
 // Delete an article
-app.delete('/articles/:id',function(req,res){
-  	db.article.findById(req.params.id).then(function(article) {
-    article.destroy();
-    res.send({message:'successfully deleted'});
-  });
+app.delete('/articles/:id', function(req,res){
+	db.article.findById(req.params.id).then(function(article) {
+		article.destroy();
+		res.send({message:'successfully deleted'});
+	});
+});
+
+// Get edit article form
+app.get('/articles/:id/edit', function(req,res){
+	db.article.findById(req.params.id).then(function(article) {
+		res.render("./articles/edit", {article: article});
+ 	});
 });
 
 // Submit edits on article
 app.put('/articles/:id', function(req,res){
-  db.news.findById(req.params.id).then(function(article){
-    article.update(req.body);
-    res.send({message:'successfully edited'});
-  });
-});
-
-// Get edit article form
-app.get('/articles/:id/edit',function(req,res){
-  	db.article.findById(req.params.id).then(function(article) {
-    res.render("./articles/edit", {article: article});
-  });
+	db.article.findById(req.params.id).then(function(article){
+		article.update(req.body);
+		res.send({message:'successfully edited'});
+		res.redirect("/articles"); 
+ 	});
 });
 
 
