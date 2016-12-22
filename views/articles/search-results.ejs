@@ -1,0 +1,16 @@
+<h1>SEARCH RESULTS</h1>
+
+<% if (searchResults.length === 0) { %>
+  <h4>We were unable to find anything with your search terms.</h4>
+<% } else {%>
+  <% articles.forEach(function(article) { %>
+    <div class="col-xs-12">
+      <h2>
+        <a href="/articles/<%= article.id %>"><%= article.title %></a>
+      </h2>
+      <h4>By <%= article.author %></h4>
+      <p>By <%= article.author %></p>
+      <hr>
+    </div>
+  <% }); %>
+<% }; %>
