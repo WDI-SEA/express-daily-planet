@@ -12,19 +12,21 @@ $('.delete-link').on('click', function(e) {
   });
 });
 
-$('#edit-form').on('submit', function(e){
+$('.edit-form').on('submit', function(e){
   e.preventDefault();
 
   var articleElement = $(this);
   var articleURL = articleElement.attr('action');
-  var data = articleElement.serialize();
+  var articleData = articleElement.serialize();
+  console.log("element:",articleElement);
+  console.log("url:",articleURL);
+  console.log("data:",articleData);
 
   $.ajax({
-    method: 'PUT',
+    method:'PUT',
     url: articleURL,
-    data: data
-  }).done(function(data){
-    console.log(data);
-    window.location = '/articles/';
+    data: articleData
+  }).done(function(data) {
+    window.location = '/articles';
   });
 });
