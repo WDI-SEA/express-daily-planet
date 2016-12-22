@@ -39,26 +39,33 @@ app.get('/contact', function(req,res){
 app.get('/articles/', function(req,res){
   db.news.findAll().then(function(articles){
     res.render('articles/index',{articles:articles});
+  }, function() {
+    res.render('site/database-issue');
   });
 });
 
-//goes to article submission page
-app.get('/articles/new', function(req,res){
-  res.render('articles/new');
-});
-
 //posts article to articles
-app.post('/articles/new',function(req,res){
-  console.log(req.body);
-  db.news.create(req.body).then(function(article){
+app.post('/articles',function(req,res){
+  db.news.create(req.body).then(function(){
     res.redirect('/articles/');
+  }, function(){
+    res.render('site/database-issue');
   });
 });
 
 //goes to specific article with id, id
 app.get('/articles/:id', function(req,res){
+  if(isNaN(req.params.id)){
+    res.render('site/url-not-found');
+  }
   db.news.findById(req.params.id).then(function(article){
-    res.render('articles/show',{article:article});
+    if(article===null){
+      res.render('site/url-not-found');
+    } else {
+      res.render('articles/show',{article:article});
+    }
+  }, function(){
+    res.render('site/database-issue');
   });
 });
 
@@ -67,6 +74,8 @@ app.delete('/articles/:id',function(req,res){
   db.news.findById(req.params.id).then(function(article){
     article.destroy();
     res.send({message:'success destroying'});
+  }, function(){
+    res.render('site/database-issue');
   });
 });
 
@@ -75,6 +84,8 @@ app.put('/articles/:id', function(req,res){
   db.news.findById(req.params.id).then(function(article){
     article.update(req.body);
     res.send({message:'success putting'});
+  }, function(){
+    res.render('site/database-issue');
   });
 });
 
@@ -82,21 +93,31 @@ app.put('/articles/:id', function(req,res){
 app.get('/articles/:id/edit', function(req,res){
   db.news.findById(req.params.id).then(function(article){
     res.render('articles/edit',{article:article});
+  }, function(){
+    res.render('site/database-issue');
   });
 });
 
 //returns search entries containing query string, not case sensitive
 app.get('/search', function(req,res){
 
-  q = req.query.searchArticles;
+  var q = req.query.searchArticles;
   console.log("query is: "+q);
 
   function isMatch(article,q){
     q = q.toLowerCase();
+
     var title = article.title.toLowerCase();
-    var content = article.body.toLowerCase();
-    if(title.indexOf(q)>=0||content.indexOf(q)>=0){
+    console.log(title);
+    var author = article.author.toLowerCase();
+    console.log(author);
+    var body = article.body.toLowerCase();
+    console.log(body);
+
+    if(title.indexOf(q)>=0||author.indexOf(q)>=0||body.indexOf(q)>=0){
       return true;
+    } else{
+      return false;
     }
   }
 
@@ -105,12 +126,21 @@ app.get('/search', function(req,res){
 
     //filter results
     for(var i=0; i<articles.length; i++){
+      console.log("i: "+i)
       if(isMatch(articles[i],q)){
         searchResults.push(articles[i]);
       }
     }
     res.render('site/search',{searchResults:searchResults});
+  }, function(){
+    res.render('site/database-issue');
   });
+});
+
+
+//this will handle all urls not caught by the above routes
+app.get('/*', function(req, res) {
+  res.render('site/url-not-found');
 });
 
 

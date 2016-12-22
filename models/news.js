@@ -2,7 +2,8 @@
 module.exports = function(sequelize, DataTypes) {
   var news = sequelize.define('news', {
     title: DataTypes.STRING,
-    body: 'varchar'
+    body: 'varchar',
+    author: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
