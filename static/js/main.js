@@ -10,8 +10,6 @@ $('.put-form').on('submit', function(e) {
     }).done(function(data) {
         // get data returned from the PUT route
         console.log(data);
-
-        // refresh the page we're on using GET to display the item details.
         window.location = url;
     });
 });

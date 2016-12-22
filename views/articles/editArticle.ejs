@@ -1,14 +1,10 @@
 <div>
     <form action="/articles/<%= article.id %>" method="PUT" class="put-form">
-        <p>
-            Title:
-        </p>
+        <p> Title: </p>
         <p>
             <input type="text" name="title" value="<%= article.title %>" />
         </p>
-        <p>
-            Body:
-        </p>
+        <p>Body: </p>
         <p>
             <textarea name="body"><%= article.body %></textarea>
         </p>

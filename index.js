@@ -40,24 +40,11 @@ app.get("/articles", function(req, res) {
     });
     // res.send("/articles is working");
 });
-
-//get single article by ID
-app.get("/article/:id", function(req, res) {
-    // res.send("article by id works");
-    // console.log(req.params.id);
-    db.article.findById(req.params.id).then(function(article) {
-        res.render("articles/oneArticle", {
-            article: article
-        });
-    });
-});
-
-//get new article form
+//get new article form NEW must be before id
 app.get("/articles/new", function(req, res) {
     res.render("articles/newArticle");
     // res.send("hi");
 });
-
 // create a new article
 app.post("/articles/new", function(req, res) {
     // res.send("post route works");
@@ -66,8 +53,18 @@ app.post("/articles/new", function(req, res) {
         // console.log(req.body);
     });
 });
+//get single article by ID
+app.get("/articles/:id", function(req, res) {
+    // res.send("article by id works");
+    // console.log(req.params.id);
+    db.article.findById(req.params.id).then(function(article) {
+        res.render("articles/oneArticle", {
+            article: article
+        });
+    });
+});
 // delete articles and redirects to articles
-app.delete("/article/:id", function(req, res) {
+app.delete("/articles/:id", function(req, res) {
     db.article.findById(req.params.id).then(function(article) {
         article.destroy();
         console.log(req.params.id);
@@ -76,25 +73,25 @@ app.delete("/article/:id", function(req, res) {
         });
     });
 });
-
-//updates article with given id
-app.put('/article/:id', function(req, res) {
-    db.article.findById(req.params.id).then(function(article) {
-        article.update(req.body);
-        res.send({
-            message: 'success putting'
-        });
-    });
-});
-
 //goes to edit form for article with id
-app.get('/article/:id/edit', function(req, res) {
-    db.news.findById(req.params.id).then(function(article) {
+app.get('/articles/:id/edit', function(req, res) {
+    db.article.findById(req.params.id).then(function(article) {
         res.render('articles/editArticle', {
             article: article
         });
     });
 });
+//updates article with given id
+app.put('/articles/:id', function(req, res) {
+    db.article.findById(req.params.id).then(function(article) {
+        article.update(req.body);
+        res.send({
+            message: 'success putting'
+        });
+        res.redirect('/articles/:id');
+    });
+});
+
 
 //listen
 app.listen(3000);
