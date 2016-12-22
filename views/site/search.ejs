@@ -1,9 +1,15 @@
-<h3>Search Resuls:</h3>
+<h3>Search Results:</h3>
 <% searchResults.forEach(function(article){ %>
-  <h4>
-    <a href="/articles/show/<%- article.id %>"><%- article.title %></a>
-  </h4>
-  <p>
-    <%- article.body %>
-  </p>
+  <div class="row" id="article<%- article.id %>">
+    <div class="col-xs-12">
+      <h4>
+        <a href="/articles/<%- article.id %>"><%- article.title %></a>
+      </h4>
+      <p>
+        <%- article.body %>
+      </p>
+      <a href="/articles/<%- article.id %>/edit" class="btn btn-sm btn-warning">Edit</a>
+      <a href="/articles/<%- article.id %>" class="btn btn-sm btn-danger delete-link">Delete</a>
+    </div>
+  </div>
 <% }); %>

@@ -1,11 +1,12 @@
 //REQUIRES
-var express = require('express');
-var bodyParser = require('body-parser');
-var ejsLayouts = require('express-ejs-layouts');
+var express = require('express'); //boilerplate
+var bodyParser = require('body-parser'); //boilerplate
+var ejsLayouts = require('express-ejs-layouts'); //boilerplate
+var path = require('path'); //boilerplate
 
 
 //APP VARIABLES
-app = express();
+app = express(); //boilerplate
 var db = require('./models'); //boilerplate
 
 
@@ -14,6 +15,9 @@ app.set('view engine', 'ejs'); //boilerplate
 app.use(ejsLayouts); //boilerplate
 app.use(bodyParser.urlencoded({extended: false})); //boilerplate
 
+// this sets a static directory for the views
+app.use(express.static(path.join(__dirname, 'static'))); //boilerplate
+
 
 //ROUTES
 //goes to home page of site
@@ -21,8 +25,18 @@ app.get('/',function(req,res){
   res.render('site/home');
 });
 
+//goes to about page
+app.get('/about', function(req,res){
+  res.render('site/about');
+});
+
+//goes to contact page
+app.get('/contact', function(req,res){
+  res.render('site/contact');
+});
+
 //goes to all articles
-app.get('/articles/index', function(req,res){
+app.get('/articles/', function(req,res){
   db.news.findAll().then(function(articles){
     res.render('articles/index',{articles:articles});
   });
@@ -37,24 +51,41 @@ app.get('/articles/new', function(req,res){
 app.post('/articles/new',function(req,res){
   console.log(req.body);
   db.news.create(req.body).then(function(article){
-    res.redirect('index');
+    res.redirect('/articles/');
   });
 });
 
-app.get('/articles/show/:id', function(req,res){
+//goes to specific article with id, id
+app.get('/articles/:id', function(req,res){
   db.news.findById(req.params.id).then(function(article){
     res.render('articles/show',{article:article});
   });
 });
 
-app.get('/about', function(req,res){
-  res.render('site/about');
+//deletes article and redirects to articles
+app.delete('/articles/:id',function(req,res){
+  db.news.findById(req.params.id).then(function(article){
+    article.destroy();
+    res.send({message:'success destroying'});
+  });
 });
 
-app.get('/contact', function(req,res){
-  res.render('site/contact');
+//updates article with given id
+app.put('/articles/:id', function(req,res){
+  db.news.findById(req.params.id).then(function(article){
+    article.update(req.body);
+    res.send({message:'success putting'});
+  });
 });
 
+//goes to edit form for article with id
+app.get('/articles/:id/edit', function(req,res){
+  db.news.findById(req.params.id).then(function(article){
+    res.render('articles/edit',{article:article});
+  });
+});
+
+//returns search entries containing query string, not case sensitive
 app.get('/search', function(req,res){
 
   q = req.query.searchArticles;
