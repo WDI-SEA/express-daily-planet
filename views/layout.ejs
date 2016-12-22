@@ -2,17 +2,27 @@
 <html>
 <head>
 	<title>Daily Planet Articles</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Vollkorn:400,400i,700,700i" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script src="https://use.fontawesome.com/0b8790a92d.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="/js/main.js"></script>
 </head>
 <body>
 	<div class="container">
-		<h1 class="text-center">Daily Planet</h1>
-		<a href="/" class="btn btn-default">Home</a>
-		<a href="/about" class="btn btn-default">About</a>
-		<a href="/contact" class="btn btn-default">Contact</a>
-		<a href="/articles" class="btn btn-primary">All Articles</a>
-		<a href="/articles/new" class="btn btn-info">New Article</a>
-		<hr>
+		<a href="/">
+			<img id="logo" src="/img/Daily_Planet_logo.jpg" alt="Daily Planet logo">
+		</a>
+		<div id="nav-bar">
+			<a href="/">Home</a>
+			<a href="/about">About</a>
+			<a href="/contact">Contact</a>
+			<a href="/articles">All Articles</a>
+			<a href="/articles/new" class="btn btn-info">
+				<i class="fa fa-plus-circle" aria-hidden="true"></i>
+				New Article
+			</a>
+		</div>
 		<%- body %> 
 	</div>
 </body>

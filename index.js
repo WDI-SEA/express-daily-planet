@@ -13,9 +13,8 @@ var db = require("./models");
 app.set("view engine", "ejs");
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.static('public'))
+app.use(express.static('static'))
 app.use(express.static('files'))
-app.use('/static', express.static('public'))
 
 
 //ROUTES
@@ -37,7 +36,6 @@ app.get("/contact", function(req, res) {
 
 // Displays a list of all articles
 app.get("/articles", function(req, res) {
-	console.log("Holla");
 	db.article.findAll().then(function(article) {
 		res.render("./articles/index", {article: article});
 	});
@@ -62,6 +60,29 @@ app.get("/articles/:id", function(req, res) {
 	});
 });
 
+// Delete an article
+app.delete('/articles/:id',function(req,res){
+  	db.article.findById(req.params.id).then(function(article) {
+    article.destroy();
+    res.send({message:'successfully deleted'});
+  });
+});
+
+// Submit edits on article
+app.put('/articles/:id', function(req,res){
+  db.news.findById(req.params.id).then(function(article){
+    article.update(req.body);
+    res.send({message:'successfully edited'});
+  });
+});
+
+// Get edit article form
+app.get('/articles/:id/edit',function(req,res){
+  	db.article.findById(req.params.id).then(function(article) {
+    res.render("./articles/edit", {article: article});
+  });
+});
+
 
 // LISTEN
 app.listen(3000); // This is how it knows which localhost address to use for index page
@@ -75,15 +96,10 @@ app.listen(3000); // This is how it knows which localhost address to use for ind
 // 	<input type="submit"/>
 // <form>
 
-// app.get('/search/:query,' function(req, res) {
-// 	var q = req.params.query;
-// 	db.article.findAll(function(articles) {
-// 		var searchResults = [];
-
-// 		// Filter results
-// 		for (var i = 0; i < articles.length; i++) {
-// 			if (articles.)
-// 				searchResults.push(articles[i];)
-// 		}
-// 	});
-// })
+// Steps to implement search:
+// 1. point form action attribute to “/search”
+// 2. give input attribute name “query”
+// 3. create server route for `app.get('/search', function(req, res) { … })`
+// 4. obtain the users search query through the query string, not as something defined with a colon in our route
+// 5. query the database with `db.article.findAll().then(function(articles) { … })`
+// 6. access the attributes on our model with `.get()` function like `article.get('title')`
