@@ -1,5 +1,27 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-xs btn-warning" id="toggle-add">Show/Hide Add Form</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <form method="POST" action="/articles/new" id="add-form">
+      <h3>Add New Article:</h3>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" class="form-control" placeholder="Article title"/>
+      </div>
+      <div class="form-group">
+        <label for="body">Body:</label>
+        <input type="text" name="body" id="body" class="form-control" placeholder="Article body"/>
+      </div>
+      <input type="submit" class="btn btn-xs btn-success" value="Add"/>
+    </form>
+  </div>
+</div>
+<hr />
 <h3>All Articles:</h3>
-<% articles.forEach(function(article){ %>
+<% articles.reverse().forEach(function(article){ %>
   <div class="row" id="article<%- article.id %>">
     <div class="col-xs-12">
       <h4>
