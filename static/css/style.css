@@ -98,7 +98,7 @@ i {
 }
 
 #nav-bar {
-	border-bottom: 1px solid #bbb;
+	border-bottom: 1px solid black;
 	padding: 15px;
 	margin: 0px 0px 15px 0px;
 	display: flex;
@@ -130,12 +130,13 @@ i {
 }
 
 .row {
-	padding: 16px 0px 30px 0;
+	padding: 30px 0px 44px 0;
 	margin: 0;
+	border-bottom: 1px solid #ccc;
 }
 
 .row p {
-	margin-bottom: 30px;
+	margin: 8px 0 24px 0;
 }
 
 .row a {
