@@ -18,25 +18,43 @@ app.get("/", function(req, res){
 });
 
 //Get all articles
-app.get("/index", function(req, res){
-  res.render("articles/index");
+app.get("/show", function(req,res){
+  db.article.findAll().then(function(articles){
+  console.log(articles);
+  res.render("articles/index", {articles: articles});
+  });
 });
 
 //Get new articles
-app.get("/article/new", function(req, res){
+app.get("/new", function(req, res){
   res.render("articles/new");
 });
 
 //Create new article form
-app.post("/new", function (req, res){
+app.post("/articles/new", function (req, res){
   console.log(req.body);
   db.article.create(req.body).then(function(article){
-    res.redirect("/index");
+    res.redirect("/show");
   });
 });
 
-//post new article and redirects to articles
+//finding article content
+app.get('/articles/:id', function(req,res){
+  db.article.findById(req.params.id).then(function(article){
+    res.render('articles/show',{article:article});
+  });
+});
 
+//Delete
+app.delete('/articles/:id', function(req, res) {
+  var articles = getArticles();
+
+  // Set the index to undefined so every other position isn't screwed up.
+  articles[req.params.id] = undefined;
+  saveArticles(articles);
+
+  res.send(req.body);
+});
 
 //listen
 app.listen(3000);
