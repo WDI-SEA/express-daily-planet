@@ -1,4 +1,8 @@
 <div class="text-center">
   <h1><%= data.title %></h1>
   <p><%= data.body %></p>
+  <p>
+    <a href="/article/<%= data.id %>/edit">edit</a>
+    <a class="delete-link" href="/article/<%= data.id %>">delete</a>
+	</p>
 </div>

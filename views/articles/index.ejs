@@ -9,7 +9,13 @@
       <% if (data[i]) { %>
         <li>
           <a href="/article/<%= data[i].id %>"><%= data[i].title %></a>
+          <p>
+				    <a href="/article/<%= data[i].id %>/edit">edit</a>
+				    <a class="delete-link" href="/article/<%= data[i].id %>">delete</a>
+				  </p>
         </li>
+        <p>
+			  </p>
       <% } %>
     <% } %>
   </ul>
