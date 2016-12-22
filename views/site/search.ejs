@@ -3,10 +3,10 @@
   <div class="row" id="article<%- article.id %>">
     <div class="col-xs-12">
       <h4>
-        <a href="/articles/<%- article.id %>"><%- article.title %></a>
+        <a href="/articles/<%- article.id %>"><%= String(article.title) %></a>
       </h4>
       <p>
-        <%- article.body %>
+        <%= String(article.body) %>
       </p>
       <a href="/articles/<%- article.id %>/edit" class="btn btn-xs btn-warning">Edit</a>
       <a href="/articles/<%- article.id %>" class="btn btn-xs btn-danger delete-link">Delete</a>
