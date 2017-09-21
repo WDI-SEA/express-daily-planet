@@ -1,0 +1,17 @@
+<h4>
+	<i class="fa fa-file-text" aria-hidden="true"></i>
+	All Articles
+</h4>
+
+<% article.forEach(function(article) { %>
+<div class="row">
+	<h2>
+		<a href="/articles/<%= article.id %>">
+			<%= article.title %>
+		</a>
+	</h2>
+	<p><b>Body:</b> <%= article.body %></p>
+	<a class="edit-link" href="/articles/<%= article.id %>/edit">Edit</a>
+	<a class="delete-link" href="/articles/<%= article.id %>">Delete</a>
+</div>
+<% }); %>

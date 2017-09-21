@@ -1,0 +1,144 @@
+body {
+	display: flex;
+	justify-content: center;
+}
+
+h2 {
+	font-family: 'Vollkorn', serif;
+	font-weight: 400;
+	font-size: 36px;
+	margin: 0;
+}
+
+h4 {
+	font-family: 'Vollkorn', serif;
+	font-weight: 700;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 22px;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 24px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	transition-property: color;
+	transition-duration: 200ms;
+}
+
+a:hover {
+	color: #888;
+}
+
+a.delete-link {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: black;
+	background-color: #ccc;
+	border-radius: 4px;
+	padding: 4px 8px;
+	transition-property: background-color;
+	transition-duration: 200ms;
+}
+
+a.delete-link:hover {
+	background-color: #dedede;
+}
+
+a.edit-link {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: white;
+	background-color: black;
+	border-radius: 4px;
+	padding: 4px 8px;
+	transition-property: background-color;
+	transition-duration: 200ms;
+}
+
+a.edit-link:hover {
+	background-color: #555;
+}
+
+.update-btn {
+	border: none;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: white;
+	background-color: black;
+	border-radius: 4px;
+	padding: 4px 8px;
+	transition-property: background-color;
+	transition-duration: 200ms;
+}
+
+i {
+	padding-right: 3px;
+}
+
+.container {
+	width: 60%;
+	max-width: 960px;
+}
+
+#nav-bar {
+	border-bottom: 1px solid black;
+	padding: 15px;
+	margin: 0px 0px 15px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+
+#nav-bar a {
+	font-family: 'Vollkorn', serif;
+	font-weight: 700;
+	font-size: 15px;
+	padding: 0 13px;
+	vertical-align: center;
+}
+
+#nav-bar i {
+	font-size: 18px;
+	padding: 3px;
+	vertical-align: middle;
+	padding-bottom: 6px;
+}
+
+#logo {
+	display: block;
+	width: 446px;
+	max-width: 70%;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+.row {
+	padding: 30px 0px 44px 0;
+	margin: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.row p {
+	margin: 8px 0 24px 0;
+}
+
+.row a {
+	margin-right: 6px;
+}
