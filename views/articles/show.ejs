@@ -1,0 +1,12 @@
+<h2><%= article.title %></h2>
+<h5><%= article.createdAt %></h5>
+
+<p>
+  <%= article.content %>
+</p>
+<a href="/articles/<%- article.id %>/edit"
+  class="btn btn-xs btn-warning">Edit
+</a>
+<a href="/articles/<%- article.id %>"
+  class="btn btn-xs btn-danger delete-link">Delete
+</a>
