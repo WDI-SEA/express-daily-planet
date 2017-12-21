@@ -3,6 +3,7 @@ let express = require('express');
 let app = express();
 let ejsLayouts = require('express-ejs-layouts');
 let bodyParser = require('body-parser');
+let path = require('path');
 
 //Set snd Use statements for middleware
 app.set('view engine', 'ejs');
@@ -19,11 +20,12 @@ app.get('/', (req,res)=>{
 
 //About route
 app.get('/about', (req, res)=>{
-    res.send('About');
+    //res.send('About');
+    res.sendFile(path.join(__dirname+'/public/about.html'));
 });
 //Contact route
 app.get('/contact', (req,res)=>{
-    res.send('contact');
+    res.sendFile(path.join(__dirname+'/public/contact.html'));
 })
 
 //Listen on port 3003

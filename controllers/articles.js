@@ -19,7 +19,7 @@ router.get('/new', (req,res)=>{
 router.get('/:id', (req, res)=>{
     db.article.findById(req.params.id).then((article)=>{
         res.render('../views/articles/singleArticle.ejs', {article:article});
-    })
+    });
 });
 
 // db.article.create({

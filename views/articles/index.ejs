@@ -1,7 +1,10 @@
 <h1>display a list of all the articles</h1>
 
 <%articles.forEach((article)=>{%>
-<a href="articles/<%=article.id%>"><%=article.title%></a> 
+    <ul>
+        <li><a href="articles/<%=article.id%>"><%=article.title%></a> </li>
+    </ul>
+
 
 
 <%});%>
