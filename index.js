@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 // app.use(bodyParser.unlencoded({extended: false}));
 app.use(ejsLayouts);
 //controllers
-app.use('/articles', require('.controller/articles'));
+app.use('/articles', require('./controller/articles'));
 
 app.get('/', function(req, res) {
   res.render('home');
