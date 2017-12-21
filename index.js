@@ -27,9 +27,6 @@ app.get('/contact', function(req, res){
 	res.render('site/contact');
 });
 
-app.get('/newpost', function(req, res){
-	res.render('articles/new');
-});
 
 
 app.listen(3000);
