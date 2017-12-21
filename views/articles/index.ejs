@@ -1,0 +1,9 @@
+<h1>List of articles</h1>
+
+<% if(articles.length <= 0) { %>
+  <h2>There are no articles to list</h2>
+<% } else { %>
+  <% articles.forEach(function(item) { %>
+    <%= item.title %><br>
+  <% }); %>
+<% } %>
