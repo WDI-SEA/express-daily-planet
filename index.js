@@ -1,6 +1,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var ejsLayouts = require("express-ejs-layouts");
+//I added this
+var path = require('path');
 
 var app = express();
 
@@ -9,6 +11,8 @@ app.use(bodyParser.urlencoded({ extended:false }));
 
 //--layouts
 app.use(ejsLayouts);
+//I changed this
+app.use(express.static(path.join(__dirname, "/svg")));
 
 //--controllers
 app.use("/articles", require("./controllers/articles"));

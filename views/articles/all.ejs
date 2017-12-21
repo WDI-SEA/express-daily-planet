@@ -1,5 +1,12 @@
 
 <h1>Full article list</h1>
-<% articleList.forEach(function(item) {%>
-   <h2><%= item.title%></h2>
-<%});%>
+<div class="pure-menu-list pure-menu">
+   <% articleList.forEach(function(item) {%>
+
+         <img class="" src="../ui-edit-profile.svg" width=20 height=20>
+         <a href="/articles/<%= item.id%>" class="pure-menu-link">
+            <h2 ><%= item.title%></h2>
+         </a>
+
+   <%});%>
+</div>

@@ -15,6 +15,15 @@ router.get("/new", function(req, res) {
 
 router.post("/", function (req,res) {
    //--create new db post
+   // console.log(req.body);
+   //--the names of the fields match the db columns
+   db.article.create(req.body).then( function(newArticle) {
+      res.redirect("/articles/"+newArticle.id);
+   }).catch(function(err) {
+      res.send("Submit error:",err);
+   });
+
+
 });
 
 router.get("/:id", function(req, res) {
