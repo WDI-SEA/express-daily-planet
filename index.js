@@ -17,10 +17,11 @@ app.get('/', (req,res)=>{
     res.render('index',{});
 });
 
+//About route
 app.get('/about', (req, res)=>{
     res.send('About');
 });
-
+//Contact route
 app.get('/contact', (req,res)=>{
     res.send('contact');
 })
