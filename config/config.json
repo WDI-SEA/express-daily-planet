@@ -1,7 +1,5 @@
 {
   "development": {
-    "username": "nick",
-    "password": "thisisatestpassword",
     "database": "daily_express",
     "host": "127.0.0.1",
     "dialect": "postgres"
