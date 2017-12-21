@@ -8,8 +8,10 @@ let bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(ejsLayouts);
-
-//Home routels
+ 
+app.use('/articles', require('./controllers/articles.js')); 
+ 
+//Home route
 app.get('/', (req,res)=>{
     res.render('index',{});
 })
