@@ -79,6 +79,19 @@ nav h3 {
 	line-height: .25em;
 }
 
+.postnav {
+	background: white;
+	color: #26221b;
+	padding: 10px;
+	font-weight: 900;
+	border-radius: 10px;
+}
+
+a.postnav:hover {
+	border-bottom: 0;
+	color: #819e1a;
+}
+
 .navbar li {
 	display: inline-block;
 	list-style: none;
