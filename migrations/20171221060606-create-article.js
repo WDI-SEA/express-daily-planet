@@ -11,7 +11,7 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
-      bodu: {
+      body: {
         type: Sequelize.TEXT
       },
       createdAt: {

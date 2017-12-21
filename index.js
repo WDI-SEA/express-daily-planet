@@ -11,7 +11,7 @@ app.use(ejsLayouts);
 
 //Home routels
 app.get('/', (req,res)=>{
-    res.send('yay');
+    res.render('index',{});
 })
 
 
