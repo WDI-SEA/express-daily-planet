@@ -1,2 +1,9 @@
 //displays a form that use to create new article
 <h2 class='text-center'>display form to create stuff</h2>
+<% if(results.length) <= 0 { %>
+  <h2>Nothing in the database yet</h2>
+  <% } else { %>
+    <% forEach(function(item){ %>
+      <%= item.title %>
+    <% }); %>
+  <% } %>
