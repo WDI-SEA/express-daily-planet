@@ -1,0 +1,74 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	color: #26221b;
+	margin: 0 auto;
+}
+
+
+h2, h3 {
+	font-weight: 900;
+}
+
+h1 {
+	font-family: 'Shrikhand', cursive;
+	font-size: 4em;
+	padding: 0;
+	margin: 40px 0 0 0;
+}
+
+header {
+	background: url('https://media.giphy.com/media/5r5J4JD9miis/giphy.gif');
+	margin: -40px auto -55px auto;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+header h1 {
+	font-size: 6em;
+	padding: 300px 0 165px 0;
+	text-align: center;
+	background: rgba(256,256,256,.10);
+}
+
+nav {
+	background: #26221b;
+	color: white;
+	display: block;
+	padding: 4px;
+	font-weight: 900;
+}
+
+a {
+	color: #819e1a;
+	text-decoration: none;
+}
+
+a:hover {
+	border-bottom: 3px solid #819e1a;
+}
+
+nav a {
+	color: white;	
+	font-weight: 400;
+}
+
+nav h3 {
+	font-family: 'Shrikhand', cursive;
+	line-height: .25em;
+}
+
+.navbar li {
+	display: inline-block;
+	list-style: none;
+	margin-right: 2em;
+}
+
+.container {
+	width: 75%;
+	margin: 0 auto;
+}
+
+footer {
+	text-align: center;
+	padding: 20px;
+}

@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,900|Shrikhand" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<title>Daily Planet</title>
 </head>
 <body>
-	<h1>Daily Planet</h1>
 	<nav>
-		<a href="/">Home Page</a>
-		<a href="/articles">View Articles</a>
+		<ul class="navbar">
+			<li><h3><a href="/">Daily Planet</a></h3></li>
+			<li><a href="about">About</a></li>
+			<li><a href="contact">Contact</a></li>
+			<li><a href="articles">News Articles</a></li>
+		</ul>
 	</nav>
 	<%- body %>	
+	<footer>
+		© Fake News, Inc. 2017
+	</footer>
 </body>
 </html>

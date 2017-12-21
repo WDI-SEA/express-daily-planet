@@ -1,8 +1,11 @@
-<% if(articles.length <= 0) { %>
-	<h2>Nothing in the database yet</h2>
-<% } else { %>
-	<% articles.forEach(function(item){ %>
-		<a href=" articles/<%= item.id %> "> <h2><%= item.title %></h2> </a>
-		<p><%= item.body %></p>
-	<% }); %>
-<% } %>
+<div class="container">
+	<h1>News Articles</h1>
+	<% if(articles.length <= 0) { %>
+		<h2>Nothing in the database yet</h2>
+	<% } else { %>
+		<% articles.forEach(function(item){ %>
+			 <h2><a href=" articles/<%= item.id %> "><%= item.title %></a></h2>
+			<p><%= item.body %></p>
+		<% }); %>
+	<% } %>
+</div>
