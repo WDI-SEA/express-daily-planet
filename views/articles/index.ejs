@@ -3,6 +3,8 @@
 	<h2>Nothing in the database yet!</h2>
 <% } else { %>
 	<% results.forEach(function(item){ %>
-		<h2><%= item.title %></h2>
+		<a href="/articles/<%= item.id %>">
+			<h2><%= item.title %></h2>
+		</a>
 	<% }); %>
 <% } %>

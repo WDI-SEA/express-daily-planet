@@ -4,7 +4,15 @@ var db = require('../models');
 
 router.get('/', function(req,res){
 	db.article.findAll().then(function(articles){
-		res.render('articles/all', {results: articles});
+		res.render('articles/index', {results: articles});
+	});
+});
+
+router.post('/', function(req,res){
+	db.article.create(req.body).then(function(createdArticle){
+		res.redirect('/articles/'+createdArticle.id)
+	}).catch(function(err){
+		res.send('uh oh!', err);
 	});
 });
 
