@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser'); 
 var ejsLayouts = require('express-ejs-layouts');
 var app = express();
+var fs = require('fs');
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,5 +26,10 @@ app.get('/about', function(req, res){
 app.get('/contact', function(req, res){
 	res.render('site/contact');
 });
+
+app.get('/newpost', function(req, res){
+	res.render('articles/new');
+});
+
 
 app.listen(3000);

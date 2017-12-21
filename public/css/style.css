@@ -68,6 +68,11 @@ nav h3 {
 	margin: 0 auto;
 }
 
+.leftfloat {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+
 footer {
 	text-align: center;
 	padding: 20px;
