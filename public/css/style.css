@@ -1,0 +1,38 @@
+body{
+	background: black;
+	text-transform: uppercase;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	color: #edefec;
+}
+
+img {
+	position: relative;
+	right: 0;
+	height: 200px;
+	width: auto;
+	z-index: -1;
+}
+
+h1 {
+	font-size: 58px;
+	margin: 0px;
+
+}
+
+h2 {
+	margin: 0px;
+	font-size: 58px;
+	text-align: center;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 32px;
+	background-color: #6f7376;
+	text-align: center;
+}
+
+.container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
