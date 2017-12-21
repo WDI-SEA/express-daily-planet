@@ -7,11 +7,13 @@ var app = express();
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended:false }));
 
+//--layouts
+app.use(ejsLayouts);
+
 //--controllers
 app.use("/articles", require("./controllers/articles"));
 
-//--layouts
-app.use(ejsLayouts);
+
 
 app.get("/", function(req,res) {
    res.render("index.ejs");
