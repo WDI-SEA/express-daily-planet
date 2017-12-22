@@ -1,0 +1,16 @@
+.icon a {
+   display: inline-block;
+   text-decoration: none;
+}
+
+.icon h2 {
+   display: inline-block;
+
+   padding-right: 4em;
+   padding-left: 1em;
+}
+
+.delete-link {
+   font-size: 10px;
+   width: 50px;
+}

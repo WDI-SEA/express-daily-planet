@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended:false }));
 //--layouts
 app.use(ejsLayouts);
 //I changed this
-app.use(express.static(path.join(__dirname, "/svg")));
+app.use(express.static(path.join(__dirname, "/public/")));
 
 //--controllers
 app.use("/articles", require("./controllers/articles"));

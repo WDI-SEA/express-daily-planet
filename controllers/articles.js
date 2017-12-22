@@ -22,8 +22,20 @@ router.post("/", function (req,res) {
    }).catch(function(err) {
       res.send("Submit error:",err);
    });
+});
 
-
+router.delete("/:id", function(req,res) {
+   // res.send("delete");
+   console.log("delete route. ID=",req.params.id);
+   db.article.destroy({
+      where: { id: req.params.id }
+   }).then( function(deleted) {
+      console.log("deleted =",deleted);
+      res.send("success");
+   }).catch(function(err) {
+      console.log("Error:",error);
+      res.send("fail");
+   });
 });
 
 router.get("/:id", function(req, res) {
