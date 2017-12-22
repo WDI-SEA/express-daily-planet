@@ -22,12 +22,11 @@ app.get('/', function(req, res) {
 });
 
 app.get('/static/about', function(req, res){
-	console.log('CLICK THIS FUCKING THING');
 	res.render('static/about.ejs');
 });
 
 app.get('/static/contact', function(req, res){
-	res.render('static/contact.ehs');	
+	res.render('static/contact.ejs');	
 });
 
 app.listen(3000);
