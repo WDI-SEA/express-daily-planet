@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Daily Planet</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-<body>
-  <h1>Daily Planet: Part 1</h1>
+<h1 class="text-center">All Daily Planet Articles!!</h1>
+<% if(results.length <= 0){ %>
+  <h2>Nothing in the database yet!</h2>
+<% } else { %>
+  <% results.forEach(function(item){ %>
+  <h3>
+    <a href="/articles/<%= item.id %>">
+    <%= item.title %>
+    </a>
+  </h3>
+  <% }); %>
+<% } %>
 
-</body>
-</html>
+

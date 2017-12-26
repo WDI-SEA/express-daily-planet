@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daily Planet</title>
+  <link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li><a href="/articles/new">Post New</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+   </nav>
+  <div class="container">
+    <%- body %>
+  </div>
+  <div class="container">
+    <a href="/" class="btn btn-lg btn-primary">Home Page</a>
+    <a href="/articles" class="btn btn-lg btn-info">View Articles</a>
+    <a href="/articles/new" class="btn btn-lg btn-default">Post New Article</a>
+  </div>
+</body>
+</html>
