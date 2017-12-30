@@ -1,0 +1,10 @@
+<h1>Solar System</h1>
+<h2>all articles currently orbitting our sun</h2>
+
+<% if(results.length<1) {%>
+	<h3>Oops! Looks like this solar system was eaten by a black hole. Wa waaaaa....</h3>
+<% } else { %>
+	<% results.forEach(function(article){ %>
+		<h3><a href="/articles/<%= article.id %>"><%= article.title %></a></h3>
+	<% }); %>
+<% } %>
