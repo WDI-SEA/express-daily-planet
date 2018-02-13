@@ -6,9 +6,27 @@
   </head>
   <body>
     <ul>
-      <% articles.forEach(function(article){ %>
-        <li><%= article.title %> - <%= article.body %></li>
+      <% articles.forEach(function(article, id){ %>
+        <li><%= article.title %> - <%= article.body %> - <a class="delete-link" href="/articles/<%= id %>/destroy">Delete</a></li>
     <%  }); %>
     </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+      $('.delete-link').on('click', function(e) {
+        e.preventDefault();
+        var articleElement = $(this);
+        var articleUrl = articleElement.attr('href');
+        $.ajax({
+          method: 'DELETE', url: articleUrl
+        }).done(function(data) {
+          console.log(data);
+          //remove article on page on client-side
+          window.location = "/articles";
+        });
+      });
+    </script>
   </body>
 </html>

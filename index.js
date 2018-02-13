@@ -50,4 +50,36 @@ app.post("/articles", function(req, res){
   res.send(req.body);
 });
 
+app.delete('/articles/:idx/destroy', function(req, res) {
+  console.log("in delete /articles/:idx/destroy");
+  //read from the JSON file
+  //parse the Json file
+  //splice the selected element out of the JSON file contents
+  //re-stringify the array and write it back to the JSON file
+  var articles = fs.readFileSync("./data.json");
+  articles = JSON.parse(articles);
+  var articleIndex = parseInt(req.params.idx);
+  articles.splice(articleIndex, 1);
+  fs.writeFileSync('./data.json', JSON.stringify(articles));
+  res.send('success');
+});
+
+app.get('/articles/:idx/edit', function(req, res) {
+  console.log('get edit articles');
+  var articles = fs.readFileSync("./data.json");
+  articles = JSON.parse(articles);
+  var index = req.params.idx;
+
+  res.render('articles/edit', {article: articles[index], id: index})
+});
+
+app.put('/articles/:idx', function(req, res) {
+  var articles = fs.readFileSync("./data.json");
+  articles = JSON.parse(articles);
+  var articleIndex = req.params.idx;
+  console.log(req.body);
+
+  res.send("Put method");
+});
+
 app.listen(3000);
