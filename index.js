@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 
 app.get('/', function(req, res) {
-	res.render('index.ejs');
+	res.render('site/index');
 })
 
 app.get('/articles', function(req, res) {
@@ -23,17 +23,21 @@ app.get('/articles/new', function(req, res) {
 	res.render('articles/new');
 })
 
+//this route needs to be above idx one, or new becomes a variable
 app.post("/articles", function(req, res) {
-	console.log("in the articles/new route");
-	res.send(req.body); //it will read my form, grab the value of inputs
+   var articles = fs.readFileSync("./data.json");
+   articles = JSON.parse(articles); //after you parse it, it is an array
+   articles.push(req.body); //req.body specifically connects to form data. sending the data related to this submit button only
+   fs.writeFileSync('./data.json', JSON.stringify(articles));
+   res.redirect('/articles')
 })
 
-app.get("articles/:idx", function(req, res) {  //http://localhost:3000/animals/2
+app.get("/articles/:idx", function(req, res) {  //http://localhost:3000/animals/2
 	var fileContents = fs.readFileSync("./data.json");
 	fileContents = JSON.parse(fileContents);
 	//get the array index from URL parses
 	var articleIndex = parseInt(req.params.idx);
-	res.render('/articles/new', {myArticle: articles[articleIndex]});
+	res.render('articles/show', {myArticle: fileContents[articleIndex]});
 });
 
 
