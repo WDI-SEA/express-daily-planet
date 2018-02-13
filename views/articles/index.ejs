@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <% include ../partials/header %>
+
+    <div class="container" style="margin-top: 15px;">
+      <div class="row">
+        <div class="col s12 center-align">
+          <a class="waves-effect waves-light btn" href="/articles/new">New Article</a>
+        </div>
+      </div>
+        <% var i = 0; %>
+        <% articles.forEach(function(article) { %>
+          <% if (i % 2 !== 0 || i === 0) { %>
+          <div class="row">
+          <% } %>
+          <div class="col s12 m6">
+            <div class="card">
+              <div class="card-image">
+                <img src="<%= article.image %>">
+                <span class="card-title"><%= article.title %></span>
+              </div>
+              <div class="card-content">
+                <p><%= article.bodyShort %></p>
+              </div>
+              <div class="card-action">
+                <a href='/articles/<%= i %>'>Read More</h1></a>
+              </div>
+            </div>
+          </div>
+          <% if (i % 2 !== 0) { %>
+            </div>
+          <% } %>
+        <% i++ %>
+      <% }); %>
+
+    </div>
+
+    <% include ../partials/footer %>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Express Daily Planet</title>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <% include ../partials/header %>
+    <img src="https://picsum.photos/1200/450" style="width:100%;" />
+    <h1 style="margin-top: -170px;padding: 0px 50px;color: #fff;">Welcome to the Express Daily Planet News!!!</h1>
+
+    <div class="container" style="margin-top: 75px;">
+        <% var i = 0; %>
+        <% articles.forEach(function(article) { %>
+          <% if (i % 2 !== 0 || i === 0) { %>
+          <div class="row">
+          <% } %>
+          <div class="col s12 m6">
+            <div class="card">
+              <div class="card-image">
+                <img src="<%= article.image %>">
+                <span class="card-title"><%= article.title %></span>
+              </div>
+              <div class="card-content">
+                <p><%= article.bodyShort %></p>
+              </div>
+              <div class="card-action">
+                <a href='/articles/<%= i %>'>Read More</h1></a>
+              </div>
+            </div>
+          </div>
+          <% if (i % 2 !== 0) { %>
+            </div>
+          <% } %>
+        <% i++ %>
+      <% }); %>
+
+    </div>
+
+    <% include ../partials/footer %>
+  </body>
+</html>
