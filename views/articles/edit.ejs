@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>All Articles</title>
+    <title>Edit Article</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
     <nav>
         <div class="nav-wrapper">
-            <form method="GET" action="">
-                <input type="text" name="search" id="search">
-            </form>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
                 <li><a href="/articles">Articles</a></li>
@@ -20,28 +17,32 @@
             </ul>
         </div>
     </nav>
-    <% articles.forEach(function(article, id) { %>
-        <div class="articles z-depth-3">
-            <h3><%= article.title %><h3>
-            <p><%= article.body %>
-                <a class="edit-link" href="articles/<%= id %>/edit">Edit</a> |  
-                <a class="delete-link" href="articles/<%= id %>/destroy">Delete</a>
-            </p>
-        </div>
-    <% }); %>
+    <div id="container">
+        <h1>Edit an existing article</h1>
+        <form action="/articles/<%= id %>" id="post-form">
+            <label for="title">Title: </label>
+            <input id="title" type="text" name="title" value="<%= article.title %>"><br>
+            <label for="body">Body: </label>
+            <textarea id="body" name="body"><%= article.body %></textarea><br>
+            <input type="submit" value="Update Article">
+        </form>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        $(".delete-link").on("click", function(e) {
+        $("#post-form").on("submit", function(e) {
             e.preventDefault();
-            var articleElement = $(this);
-            var articleUrl = articleElement.attr("href");
+            var articleForm = $(this);
+            var articleUrl = articleForm.attr('action');
+            console.log(articleUrl);
+            var articleData = articleForm.serialize();
             $.ajax({
-                method: 'DELETE',
-                url: articleUrl
+                method: "PUT",
+                url: articleUrl,
+                data: articleData
             }).done(function(data) {
                 console.log(data);
                 window.location = "/articles";
-            });
+            })
         })
     </script>
 </body>

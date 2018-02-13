@@ -54,12 +54,40 @@ app.post('/articles', function(req, res) {
   res.render('articles/index', {articles: fileContents});
 });
 
-app.get('/show/:id', function(req, res) {
+app.get('/articles/:id', function(req, res) {
   var fileContents = fs.readFileSync("./data.json");
   fileContents = JSON.parse(fileContents);
   var articleIndex = parseInt(req.params.id);
   res.render('articles/show', { article : fileContents[articleIndex] });
 });
+
+app.delete('/articles/:id/destroy', function(req, res) {
+  console.log("In the DELETE /articles/:idx/destroy route...");
+  var fileContents = fs.readFileSync("./data.json");
+  fileContents = JSON.parse(fileContents);
+  fileContents.splice(parseInt(req.params.id), 1);
+  fileContents = JSON.stringify(fileContents);
+  fs.writeFileSync('./data.json', fileContents);
+  res.send({message: "success"});
+})
+
+app.get('/articles/:id/edit', function(req, res) {
+  console.log("In the get /articles/:id/edit route...");
+  var fileContents = fs.readFileSync("./data.json");
+  fileContents = JSON.parse(fileContents);
+  var articleIndex = parseInt(req.params.id);
+  res.render('articles/edit', { article : fileContents[articleIndex], id : req.params.id });
+})
+
+app.put('/articles/:id', function(req, res) {
+  console.log("In the PUT /articles/:id route...");
+  var fileContents = fs.readFileSync("./data.json");
+  fileContents = JSON.parse(fileContents);
+  fileContents.splice(req.params.id, 1, req.body);
+  fileContents = JSON.stringify(fileContents);
+  fs.writeFileSync('./data.json', fileContents);
+  res.send({message: "success"});
+})
 
 app.listen(3000);
 
