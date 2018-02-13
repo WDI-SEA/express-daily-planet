@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>All Articles</title>
+  </head>
+  <header>
+    <ul>
+      <li><a href="/articles">News</a></li>
+      <li><a href="/articles/new">Post a New Article</a></li>
+      <li><a href="../site/about">About Us</a></li>
+      <li><a href="../site/contact">Contact</a></li>
+    </ul>
+  </header>
+  <body>
+    <ul>
+      <% articles.forEach(function (article) { %>
+        <li><%= article.title %> - <%= article.body %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

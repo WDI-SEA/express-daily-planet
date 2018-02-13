@@ -71,16 +71,16 @@ Here's the class notes on implementing basic [CRUD in Express](https://wdi_sea.g
 * `GET /`
   * view: `views/index.ejs`
   * purpose: Serve the homepage of your site.
-* `GET /articles`
+* `GET /articles` // BUILT
   * view: `views/articles/index.ejs`
   * purpose: displays a list of all articles
-* `GET /articles/new`
+* `GET /articles/new` //BUILT
   * view: `views/articles/new.ejs`
   * purpose: displays a form that users use to create a new article
-* `POST /articles`
+* `POST /articles` //BuILT
   * view: none (redirects to /articles after the article is created)
   * purpose: creates a new article (adds to articles array and saves the file)
-* `GET /articles/:id`
+* `GET /articles/:id` //BUILT
   * view: `views/articles/show.ejs`
   * purpose: find an article by id in the array of `articles` and display it.
 

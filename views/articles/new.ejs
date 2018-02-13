@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Article Form</title>
+  </head>
+  <body>
+
+    <form method="POST" action="/articles/new">
+      <!-- label "for" text needs to match input "id" text -->
+      <label for="articleTitle">Article Title</label>
+      <input id="articleTitle" type="Text" name="title">
+
+      <label for="articleBody">Article Body</label>
+      <input id="articleBody" type="Text" name="body">
+
+      <input type="submit" value="Submit New Article">
+    </form>
+  </body>
+</html>
