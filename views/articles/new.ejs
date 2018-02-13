@@ -1,17 +1,18 @@
+
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Post a New Article</title>
-</head>
-<body>
-	<form method="POST" action="/articles/new">
-		<label for='articleTitle'>Title</label>
-		<input id='articleTitle' type='text' name='title'>
+  <head>
+    <title>Create Your Article</title>
+  </head>
+  <body>
+    <form method="POST" action="/articles">
+      <label for="articleTitle">Title</label>
+      <input id="articleTitle" type="text" name="title">
 
-		<label for='articleBody'>Body</label>
-		<input id='articleBody' type='text' name='body'>
+      <label for="articleBody">Article</label>
+      <input id="articleBody" type="text" name="body">
 
-		<input type='submit' value="Submit Article">
-	</form>
-</body>
+      <input type="submit" value="Submit Article">
+    </form>
+  </body>
 </html>
