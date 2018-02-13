@@ -14,8 +14,8 @@
         </div>
       </div>
         <% var i = 0; %>
-        <% articles.forEach(function(article) { %>
-          <% if (i % 2 !== 0 || i === 0) { %>
+        <% articles.forEach(function(article, id) { %>
+          <% if (id % 2 !== 0 || id === 0) { %>
           <div class="row">
           <% } %>
           <div class="col s12 m6">
@@ -28,11 +28,12 @@
                 <p><%= article.bodyShort %></p>
               </div>
               <div class="card-action">
-                <a href='/articles/<%= i %>'>Read More</h1></a>
+                <a href='/articles/<%= id %>'>Read More</a>
+                <a href='/articles/<%= id %>/destroy' class="delete-link">Delete</a>
               </div>
             </div>
           </div>
-          <% if (i % 2 !== 0) { %>
+          <% if (id % 2 !== 0) { %>
             </div>
           <% } %>
         <% i++ %>
@@ -41,5 +42,20 @@
     </div>
 
     <% include ../partials/footer %>
+    <script>
+      $('.delete-link').on('click', function(e) {
+        e.preventDefault();
+        //var articleElement = $(this);
+        var articleUrl = $(this).attr('href');
+        $.ajax({
+          method: 'DELETE',
+          url: articleUrl
+        }).done(function(data) {
+          console.log(data);
+          //remove article from page on client-side
+          window.location = "/articles"
+        });
+      });
+    </script>
   </body>
 </html>

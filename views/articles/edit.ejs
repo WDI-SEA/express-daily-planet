@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Article</title>
+    <% include ../partials/head %>
+
+  </head>
+  <body>
+    <% include ../partials/header %>
+
+    <div class="container" style="margin-top:40px;">
+      <form method="POST" action="/articles/<%= id %>" id="put-form">
+        <div class="row">
+          <div class="col s12">
+            <label for="article-tite">Article Title</label>
+            <input id="article-title" type="text" name="title" value="<%= article.title %>">
+          </div>
+          <div class="col s12">
+            <label for="article-image">Article Image</label>
+            <input id="article-image" type="text" name="image" value="<%= article.image %>">
+          </div>
+          <div class="col s12">
+            <label for="article-short-body">Article Shortened Body</label>
+            <input id="article-short-body" type="text" name="bodyShort" value="<%= article.bodyShort %>">
+          </div>
+          <div class="col s12">
+            <label for="article-body">Article Body</label>
+            <input id="article-body" type="text" name="body" value="<%= article.body %>">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <input type="submit" class="waves-effect waves-light btn" value="Apply Edit">
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <% include ../partials/footer %>
+    <script>
+    $('#put-form').on('click', function(e) {
+      e.preventDefault();
+      var articleUrl = $(this).attr('action');
+      var articleData = $(this).serialize();
+      $.ajax({
+        method: "PUT",
+        url: articleUrl,
+        data: articleData
+      }).done(function(data) {
+        console.log(data);
+        // update the client-side UI
+
+      });
+    });
+    </script>
+  </body>
+</html>
