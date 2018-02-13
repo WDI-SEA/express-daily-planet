@@ -3,13 +3,13 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 
 var app = express();
+app.use(express.static('css'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
 //Serve the homepage
 app.get('/', function(req, res) {
-  console.log('Does nodemon work?');
   res.render('site/index');
 });
 
@@ -53,6 +53,7 @@ app.get('/about', function(req, res) {
 app.get('/contact', function(req, res) {
   res.render('site/contact');
 })
+
 
 
 app.listen(3000);

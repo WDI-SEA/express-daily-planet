@@ -1,39 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Express Daily Planet - All Articles</title>
-    <style>
-      body {
-        padding: 0px;
-        margin: 0px;
-        text-align: center;
-      }
-
-      header {
-        background-color: #000000;
-      }
-
-      h1 {
-        font-family: Times;
-        color: #FFFFFF;
-      }
-
-      a {
-        color: #FFFFFF;
-      }
-
-      li {
-        list-style-type: none;
-        padding: 5px;
-        margin: 5px;
-      }
-
-      div {
-        display: inline-block;
-        padding: 5px;
-        margin: 5px;
-      }
-      </style>
+    <title>All Articles</title>
+    <link rel="stylesheet" type='text/css' href="style.css">
   </head>
   <body>
     <header>
@@ -43,6 +12,7 @@
       <div><a href='/about'>About the Planet</a></div>
       <div><a href='/contact'>Contact Us</a></div>
     </header>
+    <div><h1>All Articles</h1></div>
     <ul>
       <% articles.forEach(function(story) { %>
         <li><%= story.title %> - <%= story.body %></li>

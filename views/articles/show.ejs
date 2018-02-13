@@ -2,32 +2,7 @@
 <html>
   <head>
     <title><%= thisStory.title %></title>
-    <style>
-      body {
-        padding: 0px;
-        margin: 0px;
-        text-align: center;
-      }
-
-      header {
-        background-color: #000000;
-      }
-
-      h1 {
-        font-family: Times;
-        color: #FFFFFF;
-      }
-
-      a {
-        color: #FFFFFF;
-      }
-
-      div {
-        display: inline-block;
-        padding: 5px;
-        margin: 5px;
-      }
-      </style>
+    <link rel="stylesheet" type='text/css' href="style.css">
   </head>
   <body>
     <header>
@@ -37,6 +12,7 @@
       <div><a href='/about'>About the Planet</a></div>
       <div><a href='/contact'>Contact Us</a></div>
     </header>
+    <div><h1>All Articles</h1></div>
     <h1><%= thisStory.title %></h1>
     <p><%= thisStory.body %></h1>
   </body>

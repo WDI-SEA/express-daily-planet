@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Submit Your Story</title>
     <style>
       body {
         padding: 0px;
@@ -14,6 +14,11 @@
       }
 
       h1 {
+        font-family: Times;
+        color: #000000;
+      }
+
+      h1 a {
         font-family: Times;
         color: #FFFFFF;
       }
@@ -40,12 +45,13 @@
   </head>
   <body>
     <header>
-      <div><a href='/articles/new'>Submit a Story</a></div>
+      <div><a href='/articles/new'>Submit Your Story</a></div>
       <div><a href='/articles'>Today's Top Stories</a></div>
       <div><h1><a href='/'>Express Daily Planet</a></h1></div>
       <div><a href='/about'>About the Planet</a></div>
       <div><a href='/contact'>Contact Us</a></div>
     </header>
+    <div><h1>Submit Your Story</h1></div>
     <form method='POST' action=''>
       <label for='articleTitle'>Title:</label>
       <input id='articleTitle' type='text' name='title'>
