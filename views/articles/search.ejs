@@ -1,0 +1,22 @@
+
+<% if(searchResults.length===0){ %>
+    <h3>No results found.</h3>
+<%  } else{ %>
+    <h3>(<%- searchResults.length %>) Results found:</h3>
+    <% searchResults.forEach(function(article){ %>
+  <div class="row" id="article<%- article.id %>">
+    <div class="col-xs-12">
+      <h4>
+        <a href="/articles/<%- article.id %>"><%= String(article.title) %></a>
+      </h4>
+      <h5>
+        <%= String(article.author) %>
+      </h5>
+      <p>
+        <%= String(article.body) %>
+      </p>
+      <a href="/articles/<%- article.id %>/edit" class="btn btn-xs btn-warning">Edit</a>
+      <a href="/articles/<%- article.id %>" class="btn btn-xs btn-danger delete-link">Delete</a>
+    </div>
+  </div>
+<% })}; %>
