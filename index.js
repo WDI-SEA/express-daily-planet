@@ -9,7 +9,7 @@ app.use(express.static('public'))
 
 app.get('/', function(req, res) {
   console.log("Does nodemon know about this?");
-  res.render("index");
+  res.render("site/index");
 });
 
 app.get('/articles', function(req, res) {
@@ -26,7 +26,7 @@ app.post('/articles/new', function(req, res) {
 
   var fileContents = fs.readFileSync('./data.json'); //grab the contents
   fileContents = JSON.parse(fileContents);
-  fileContents.push(req.body); //req.body is the form contents
+  fileContents.push(req.body); //req.body is the form contents it's pulling out
   //var newArticle = res.send(req.body); //pull the data entered into the form, then show that data to the user back. it's holding it.
   fs.writeFileSync('./data.json', JSON.stringify(fileContents));
   res.redirect('/articles'); //add new article to data array from Sean
