@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Creat an article</title>
+  </head>
+  <body>
+
+    <% include ../partials/header %>
+
+
+    <h1>Create your new article here</h1>
+
+    <form method="POST" action="/articles" id="articleForm">
+      <label for="articleTitle">Title</label>
+      <input id="articleTitle" type="text" name="title">
+      <input type="submit" value="Submit your article">
+    </form>
+
+    <textarea rows="5" columns="60" name="body" form="articleForm" placeholder="Enter article body here..."></textarea>
+
+  </body>
+</html>
