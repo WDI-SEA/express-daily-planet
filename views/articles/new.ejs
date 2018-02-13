@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="/articles">Articles</a></li>
+                <li><a href="/new">Submit an article</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="container">
+        <h1>Submit a new article to the Express Daily Planet</h1>
+        <form method="POST" action="/articles">
+            <label for="title">Title: </label>
+            <input id="title" type="text" name="title"><br>
+            <label for="body">Body: </label>
+            <textarea id="body" name="body"></textarea><br>
+            <input type="submit" value="Submit Article">
+        </form>
+    </div>
+</body>
+</html>
