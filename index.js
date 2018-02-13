@@ -37,7 +37,7 @@ app.get('/contact', function(req, res) {
   res.render("site/contact");
 });
 
-app.post('/articles/new', function(req, res) {
+app.post('/articles', function(req, res) {
   var articles = fs.readFileSync("./data.json");
   articles = JSON.parse(articles);
   articles.push(req.body);
