@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var app = express();
 app.set('view engine', 'ejs'); //setting up ejs
 app.use(bodyParser.urlencoded({extended: false})); //setting up body-parser
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.get('/', function(req, res) {
   console.log("Does nodemon know about this?");
@@ -22,8 +22,7 @@ app.get('/articles/new', function(req, res) {
   res.render("articles/new");
 });
 
-app.post('/articles/new', function(req, res) {
-
+app.post('/articles/new', function(req, res) { //this has to be above get .../articles/:idx
   var fileContents = fs.readFileSync('./data.json'); //grab the contents
   fileContents = JSON.parse(fileContents);
   fileContents.push(req.body); //req.body is the form contents it's pulling out
