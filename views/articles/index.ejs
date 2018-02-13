@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Express Daily Planet - All Articles</title>
+  </head>
+  <body>
+    <ul>
+      <% articles.forEach(function(story) { %>
+        <li><%= story.title %> - <%= story.body %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
