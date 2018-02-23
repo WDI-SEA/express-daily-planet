@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Articles</title>
+
+
+</head>
+<body>
+<ul>
+
+  <% articles.forEach(function(article, id){ %>
+    <li><%= article.title %> - <%= article.body %> - <a id="delete-link" href="/articles/<%= id %>/destroy">Delete</a> </li>
+
+  <% }); %>
+</ul>
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <script>
+  $(".delete-link").on("click", function(e {
+    e.preventDefault();
+    var articleElement = $(this);
+    var articleUrl = articleElement.attr('href');
+    $.ajax({
+      method: 'DELETE',
+      url: articleUrl
+    }).done(function(data){
+      console.log(data);
+      // remove article from page on client-side
+      window.location = "/articles";
+    });
+  });
+  </script>
+</body>
+</html>
