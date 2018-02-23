@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Articles</title>
+  <style>
+  li {
+    color: red;
+  }
+  </style>
+</head>
+<body>
+<ul>
+  <% articles.forEach(function(article){ %>
+    <li><% article.title %> - <%= article.body %></li>
+  <% }); %>
+</ul>
+</body>
+</html>
