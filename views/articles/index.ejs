@@ -1,0 +1,14 @@
+<div id = "mainHeader">
+<h1>All the articles</h1>
+</div>
+<% if(results.length <=0){ %>
+
+<%} else {%>
+<div class = "articles">
+    <% results.forEach(function(item){ %>
+    <div id="articleTitle">
+		<h4><%= item.title %></h4>
+	</div>
+		<p><%= item.body %></p>
+    <%});%>
+<%}%>
