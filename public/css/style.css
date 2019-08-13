@@ -1,0 +1,12 @@
+body {
+  background: grey;
+}
+
+.container {
+  margin: 5% 10%;
+  width: 80%;
+}
+
+.nav-wrapper {
+  background: pink;
+}
