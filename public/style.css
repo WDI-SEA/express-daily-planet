@@ -1,0 +1,15 @@
+body, html {
+    height: 100%;
+}
+.bg { 
+    /* The image used */
+    background-image: url("http://i.dailymail.co.uk/i/pix/2009/07/24/article-1201997-05D4C6A9000005DC-454_634x633.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
