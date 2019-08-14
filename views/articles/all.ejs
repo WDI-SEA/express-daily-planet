@@ -1,0 +1,16 @@
+
+<h1>Full article list</h1>
+<div class="pure-menu-list pure-menu">
+   <% articleList.forEach(function(item) {%>
+      <div class="pure-menu-link icon">
+
+         <a href="/articles/<%= item.id%>" >
+            <img class="icon" src="/svg/ui-edit-profile.svg" width=20 height=20>
+            <h2 ><%= item.title%></h2>
+         </a>
+
+         <a href="/articles/<%= item.id%>" class="pure-button delete-link">Delete</a>
+
+      </div>
+   <%});%>
+</div>
