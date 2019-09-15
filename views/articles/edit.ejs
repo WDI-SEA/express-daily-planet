@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Article</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+                <li><a href="/articles">Articles</a></li>
+                <li><a href="/new">Submit an article</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="container">
+        <h1>Edit an existing article</h1>
+        <form action="/articles/<%= id %>" id="post-form">
+            <label for="title">Title: </label>
+            <input id="title" type="text" name="title" value="<%= article.title %>"><br>
+            <label for="body">Body: </label>
+            <textarea id="body" name="body"><%= article.body %></textarea><br>
+            <input type="submit" value="Update Article">
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $("#post-form").on("submit", function(e) {
+            e.preventDefault();
+            var articleForm = $(this);
+            var articleUrl = articleForm.attr('action');
+            console.log(articleUrl);
+            var articleData = articleForm.serialize();
+            $.ajax({
+                method: "PUT",
+                url: articleUrl,
+                data: articleData
+            }).done(function(data) {
+                console.log(data);
+                window.location = "/articles";
+            })
+        })
+    </script>
+</body>
+</html>
