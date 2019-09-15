@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+    <style>
+      li {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+<% include ../partials/header %>
+
+    <br>
+    <a href="/new">Create an article<a>
+    <br>
+
+    <ul>
+      <% var i = 0; %>
+      <% articles.forEach(function(article) { %>
+        <li><a href="/articles/<%=i%>"><%= article.title %> - <%= article.body %></a></li>
+        <% i++%>
+      <% }); %>
+    </ul>
+  </body>
+</html>
