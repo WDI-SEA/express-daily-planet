@@ -1,0 +1,44 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+
+header {
+  background-color: #000000;
+}
+
+h1 {
+  font-family: Times;
+  color: #000000;
+}
+
+h1 a {
+  font-family: Times;
+  color: #FFFFFF;
+}
+
+a {
+  color: #FFFFFF;
+}
+
+li {
+  list-style-type: none;
+  padding: 5px;
+  margin: 5px;
+}
+
+form {
+  margin: 20px;
+  padding: 5px;
+}
+
+input {
+  margin: 0 0 20px 0
+}
+
+div {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+}
