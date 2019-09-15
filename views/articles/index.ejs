@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articles</title>
+  </head>
+  <body>
+    <ul>
+      <% articles.forEach(function(item){ %>
+      <h1><%= item.title %></h1>
+      <p><%= item.body %></p>
+    <% }); %>
+  </body>
+</html>
