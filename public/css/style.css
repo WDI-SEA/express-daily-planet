@@ -1,0 +1,10 @@
+.waves-effect.waves-light.btn {
+  background: #cf3434;
+}
+.waves-effect.waves-light.btn:hover {
+  background: #d14f4f;
+}
+
+.delete-link {
+  float: right;
+}
