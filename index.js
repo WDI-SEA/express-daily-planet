@@ -3,7 +3,6 @@ let db = require('./models')
 
 let app = express();
 app.set('view engine', 'ejs');
-// app.use(bodyParser.urlencoded({extended: false}));
 app.use('/static', express.static('static'))
 
 app.get('/', function(req, res) {
