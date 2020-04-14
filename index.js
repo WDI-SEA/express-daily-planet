@@ -11,12 +11,21 @@ app.set('view engine', 'ejs')
 //use layouts
 app.use(layouts)
 
+//setup static folder
+app.use(express.static('static'))
+
 //body parser
 app.use(express.urlencoded({extended: false}))
 
 //ROUTES
 app.get('/', (req, res) => {
     res.render('site/home')
+  })
+  app.get('/about', (req, res) => {
+    res.render('site/about')
+  })
+  app.get('/contact', (req, res) => {
+    res.render('site/contact')
   })
 
 //new article form
@@ -50,8 +59,16 @@ app.post('/articles', (req, res) => {
 //get specific article
 app.get('/articles/:id', (req,res) => {
     var index = parseInt(req.params.id)
-    console.log(index)
-    res.render('articles/show', index)
+    db.articles.findByPk(index)
+    .then(article => {
+        console.log('this article!')
+        res.render('articles/show', {article})
+    })
+    .catch(err => {
+        console.log('bleh', err)
+        res.send('bleh another error')
+    })
+    
 })
 
 //port to listen on

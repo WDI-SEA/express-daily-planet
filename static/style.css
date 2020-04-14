@@ -1,0 +1,20 @@
+body {
+    text-align: center;
+}
+h1 {
+    color: royalblue;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: mediumslateblue;
+}
+nav li {
+    display: inline;
+    padding-right: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: pink;
+}
