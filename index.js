@@ -4,6 +4,8 @@ let app = express()
 let layouts = require('express-ejs-layouts')
 let db = require('./models')
 let router = express.Router()
+let method = require('method-override')
+let {Op} = require('sequelize')
 
 //set ejs as view engine
 app.set('view engine', 'ejs')
@@ -12,12 +14,12 @@ app.use(layouts)
 app.use(express.static('static'))
 //dont get this one
 app.use(express.urlencoded({ extended: false }))
-
+app.use(method('_method'))
 
 
 //trying to get home
-app.get('/site/home', (req, res) => {
-  res.render('/')
+app.get('/', (req, res) => {
+  res.render('site/home')
 })
 
 // get articles and render on index.ejs
@@ -56,7 +58,31 @@ app.post('/articles', (req, res) => {
 })
 
 // create searchbar functions
+app.get('/search', (req, res) => {
+  db.articles.findAll({
+    where: {title: {[Op.like]:`%${req.query.query}%` }}
+  }).then(article => {
+    res.render('articles/show', {article})
+  }).catch(err => {
+    console.log('error in search', err)
+  })
 
+})
+
+
+//delete function
+app.post('/delete', (req, res) => {
+  db.articles.destroy({
+    where: {id: req.body.id}
+  })
+  .then(newArticle => {
+    console.log(req.body)
+    res.redirect('/')
+  }).catch(err => {
+    console.log('error', err)
+    res.send('delete is broke')
+  })
+} )
 // link for home about and contact info
 
 

@@ -1,9 +1,13 @@
 <h1>Articles</h1
 
-  
 <% articles.forEach(a => { %>
     <h2>Title: <%=a.title %></h2>
     <h4>Author: <%=a.author %></h4>
     <h3>Content: <%=a.content %></h3>
+    <form action="delete" method="post">
+      <input type="hidden" name="id" value="<%=a.id%>">
+      <button type="submit" >delete</button>
+    </form>
     <hr>
+
 <% }) %>
