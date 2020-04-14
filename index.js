@@ -2,6 +2,8 @@
 let express = require('express');
 let db = require('./models')
 let layouts = require('express-ejs-layouts')
+let {Op} = require('sequelize')
+let method = require('method-override')
 
 // Declare a new express app
 let app = express()
@@ -9,6 +11,7 @@ let app = express()
 //serve static files
 app.use(express.static('static'))
 app.use(express.urlencoded({ extended: false }))
+app.use(method('_method'))
 
 // set the template language to ejs
 app.set('view engine', 'ejs')
@@ -58,9 +61,11 @@ app.post('/articles', (req, res) => {
 app.get('/search', (req, res) =>{
     console.log(req.query.query)
     let search = req.query.query
-    db.articles.findAll()
+    db.articles.findAll({
+        where: {title:{[Op.like]:`%${search}%`}}
+    })
     .then(articles => {
-        res.render('articles/show', {search, articles})
+        res.render('articles/show', {articles})
     })
     .catch(err => {
         console.log('Error ', err)
@@ -68,21 +73,21 @@ app.get('/search', (req, res) =>{
     })
 })
 
+
 app.post('/delete', (req, res) => {
-    console.log(req.body)
     db.articles.destroy({
-        where: { id: req.body},
-        truncate: true
+        where: {id: req.body.id},
     })
-    .then(newArticle => {
+    .then(deleted => {
         console.log(req.body)
         res.redirect('/articles')
     })
-    .catch(err =>{
-        console.log('error', err)
-        res.send('The Consequences Will Never Be The Same!')
+    .catch(err => {
+        console.log('Error ', err)
+        res.send('Oooof, BIG ERROR')
     })
 })
+
 
 app.get('/site/about', (req, res) => {
     res.render('site/about')

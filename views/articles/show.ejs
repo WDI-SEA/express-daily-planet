@@ -1,11 +1,15 @@
 <h1>Search Results</h1>
 
-<div class="searchRes">
-    <% articles.forEach(a => { %>
+
+<% articles.forEach(a => { %>
+    <div class="searchRes">
         <h2><%= a.title %></h2>
         <h3><%= a.author %></h3>
         <p><%= a.content %></p>
-    <% }) %>
-</div>
+        
+    </div>
+
+<% }) %>
+
 
 <h2>End of Results</h2>
