@@ -28,9 +28,11 @@ router.get('/new', (req, res) => {
 
 
 router.get('/:id', (req, res) => {
-	//still working on it
+	db.articles.findById(req.body.id)
+	.then(articles => {
+		res.render('articles/new', {articles})
+	})
 })
-
 
 //export
 module.exports = router
