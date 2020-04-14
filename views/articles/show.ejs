@@ -1,0 +1,9 @@
+<h1>Search Page</h1>
+
+<% for( let i = 0; i < articles.length; i++) { %>
+    <% if (articles[i].title == searchmatch || articles[i].content == searchmatch || articles[i].author == searchmatch) { %>
+        <h2><%= articles[i].title %></h2>
+        <h3><%= articles[i].author %></h3>
+        <p><%= articles[i].content %></p>
+    <% } %>
+<% } %>
