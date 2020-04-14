@@ -1,4 +1,4 @@
-<h1> Published Articles </h1>
+<h1 id="articlesTitle"> Published Articles </h1>
 <a href="/">
     <button> Front Page </button>
 </a>
@@ -7,13 +7,14 @@
     <% articles.forEach(article => { %>
         <h2><%= article.title %></h2>
         <h3><%= article.author %></h3>
-        <a href="/article/<%= article.id %>">
+        <a href="/articles/show/<%= article.id %>">
             <button> Read Article </button>
         </a>
     <% }) %>
 <% } else { %>
     <p> There are no published articles</p>
 <% } %>
+<br>
 <a href="/">
     <button> Front Page </button>
 </a>
