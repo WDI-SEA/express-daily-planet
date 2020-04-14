@@ -1,0 +1,17 @@
+<h1>Article List</h1>
+
+
+<% if( articles.length ) { %>
+    <% articles.forEach(a => { %>
+        <h2><%= a.title %></h2>
+        <h3><%= a.author %></h3>
+        <p><%= a.content %></p>
+        <form method="POST" action="/delete">
+            <input type="hidden" name="id" value="<%= a.id %>">
+            <button type="submit">Delete Article</button>
+        </form>
+        <hr>
+    <% }) %>
+<% } else { %>
+    <h2>Looks like we actually don't like writing that much.</h2>
+<% } %> 
