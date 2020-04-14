@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>new articles</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/articles">Articles</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="articles/new">New Articles</a>
+  </nav>
+  <form method="POST" action="/articles/new">
+    <label for="artictleTitle">Title</label>
+    <input id="articleTitle" type='text' name='title'>
+
+    <label for="articleBody">Body</label>
+    <input id="articleBody" type='text' name='body'>
+
+    <input type="submit" value="Submit Your Article">
+  </form>
+
+</body>
+</html>
