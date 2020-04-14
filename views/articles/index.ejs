@@ -1,0 +1,18 @@
+<h1> Published Articles </h1>
+<a href="/">
+    <button> Front Page </button>
+</a>
+<% if(articles.length) { %>
+    <% articles.forEach(article => { %>
+        <h2><%= article.title %></h2>
+        <h3><%= article.author %></h3>
+        <a href="/article/<%= article.id %>">
+            <button> Read Article </button>
+        </a>
+    <% }) %>
+<% } else { %>
+    <p> There are no published articles</p>
+<% } %>
+<a href="/">
+    <button> Front Page </button>
+</a>
