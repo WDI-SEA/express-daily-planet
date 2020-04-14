@@ -1,5 +1,5 @@
 <h1>Search Page</h1>
-
+<div class="content">
 <% for( let i = 0; i < articles.length; i++) { %>
     <% if (articles[i].title == searchmatch || articles[i].content == searchmatch || articles[i].author == searchmatch) { %>
         <h2><%= articles[i].title %></h2>
@@ -7,3 +7,4 @@
         <p><%= articles[i].content %></p>
     <% } %>
 <% } %>
+</div>

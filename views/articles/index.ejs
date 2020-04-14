@@ -2,14 +2,15 @@
 
 <% if(articles.length) { %>
     <% articles.forEach(art => { %>
+    <div class="content">
         <h2><%= art.title %></h2>
         <h3><%= art.author %></h3>
         <p><%= art.content %></p>
-        <form method="POST" action="/delete">
+        <!-- <form method="POST" action="/delete">
             <input type="hidden" name="id" value="<%= art.id %>">
             <button type="submit">delete</button>
-        </form>
-        <hr>
+        </form> -->
+    </div>
     <% }) %>
 
 <% } else { %>
