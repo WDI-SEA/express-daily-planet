@@ -2,6 +2,7 @@
 <a href="/">
     <button> Front Page </button>
 </a>
+<%- include('../partials/search.ejs') %>
 <% if(articles.length) { %>
     <% articles.forEach(article => { %>
         <h2><%= article.title %></h2>
