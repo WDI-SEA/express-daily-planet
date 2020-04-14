@@ -1,0 +1,7 @@
+<h1>Search results:</h1>
+<% articles.forEach(x => { %>
+ <h3><%= x.title %></h3>
+ <p>By: <%= x.author %></p>
+ <a href="/articles/<%=x.id%>"</a>Go to article</a>
+ <hr>
+<% }) %>

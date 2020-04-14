@@ -2,6 +2,7 @@
 let express = require('express')
 let layouts = require('express-ejs-layouts')
 let db = require('./models')
+let {Op} = require('sequelize')
 //app instance
 let app = express()
 
@@ -33,7 +34,7 @@ app.get('/articles/new', (req, res) => {
     res.render('articles/new')
 })  
 
-//articles index
+// articles index
 app.get('/articles/index', (req, res) => {
     db.articles.findAll()
     .then(articles => {
@@ -43,6 +44,29 @@ app.get('/articles/index', (req, res) => {
         console.log('error!', err)
     })
 })
+app.get('/articles', (req, res) => {
+    let searchTerm = req.query.search
+    if (searchTerm == null) {
+        res.render('articles/index')
+    } else {
+        db.articles.findAll({
+            where: {
+                content: {
+                [Op.like]: `%${searchTerm}%`
+                }
+            }
+        })
+        .then(articles => {
+            console.log(articles)
+            res.render('articles/search', {articles})
+        })
+        .catch(err => {
+            console.log('error error')
+        })
+    }
+    
+})
+
 
 //article submission to database
 app.post('/articles', (req, res) => {
