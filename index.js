@@ -44,8 +44,16 @@ app.post('/articles', (req, res) => {
     })
 })
 
-app.get('articles/id:', (req, res) => {
-    res.send('')
+app.get('/articles/:id', (req, res) => {
+    let showIndex = parseInt(req.params.id)
+    db.articles.findByPk(showIndex)
+    .then( articles => {
+        res.render('articles/show', {articles})
+    })
+    .catch(err => {
+        console.log('Something went worong...')
+        res.send('Something went wrong...')
+    })
 })
 
 
