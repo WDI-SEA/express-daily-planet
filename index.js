@@ -1,11 +1,13 @@
 // Your code here
 let express = require('express')
 let app = express();
-let layouts = require('express-ejs-layouts')
+var ejsLayouts = require('express-ejs-layouts')
+var router = express.Router();
 
 // Set the template language to EJS
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
+app.use(ejsLayouts)
 
 let db = require('./models');
 
@@ -17,7 +19,8 @@ app.get('/', (req, res) => {
 app.get('/articles', (req, res) => {
     db.articles.findAll()
     .then(articles => {
-    res.render('articles/index')
+        console.log(articles)
+    res.render('articles/index', {articles})
     })
     .catch(err => {
         console.log('Something went worong...')

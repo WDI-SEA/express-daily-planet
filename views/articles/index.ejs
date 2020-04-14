@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> New Articles Here </h1>
-    <%
-</body>
-</html>
+<h1>Articles here</h1>
+
+
+<% articles.forEach(m => { %>
+    <h2>Title: <%=m.title %></h2>
+    <h3>Content: <%=m.content %></h3>
+    <h4>Author: <%=m.author %></h4>
+    <hr>
+<% }) %>
