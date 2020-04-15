@@ -9,7 +9,9 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        validate: {
+          len: [1, 150]
       },
       content: {
         type: Sequelize.TEXT
